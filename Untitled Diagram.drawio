@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-09-07T10:43:31.858Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="LkJf_Xdc9VItM9FgVwNE" version="20.2.8" type="github">
+<mxfile host="app.diagrams.net" modified="2022-09-07T10:55:37.365Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36" etag="o3sRsaFzn1nwHtb1m2rz" version="20.2.8" type="github">
   <diagram id="XdCzGxcUaP8d4rbetWeQ" name="Page-1">
     <mxGraphModel dx="780" dy="1144" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -22,7 +22,7 @@
         </mxCell>
         <UserObject label="&lt;b&gt;Properties&lt;/b&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;this.element&lt;/li&gt;&lt;ul&gt;&lt;li&gt;passed during creation&lt;/li&gt;&lt;li&gt;selects the element w/ &#39;game-container&#39; class&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;this.canvas&amp;nbsp;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;uses this.element to select the element w/ &#39;game-canvas&#39; class&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;this.ctx&amp;nbsp;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;calls the getContext method to create a 2D object to represent a 2D rendering context&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;this.map&amp;nbsp;&lt;/li&gt;&lt;ul&gt;&lt;li&gt;initial value set to null&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;this.directionInput&lt;/li&gt;&lt;ul&gt;&lt;li&gt;created within the init() method&lt;/li&gt;&lt;li&gt;creates a new DirectionInput object&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;&lt;b&gt;Methods&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;startGameLoop()&lt;/li&gt;&lt;ul&gt;&lt;li&gt;loop that clears the canvas, establishes the camera person, updates objects and draws objects and maps&lt;/li&gt;&lt;li&gt;calls itself through requestAnimationFrame() to create the loop&lt;/li&gt;&lt;/ul&gt;&lt;li&gt;init()&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;" placeholders="1" name="Variable" id="21So4gmTSkQ54xxVftuY-7">
           <mxCell style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;overflow=hidden;" vertex="1" parent="1">
-            <mxGeometry x="260" y="230" width="580" height="220" as="geometry" />
+            <mxGeometry x="260" y="230" width="580" height="460" as="geometry" />
           </mxCell>
         </UserObject>
       </root>
