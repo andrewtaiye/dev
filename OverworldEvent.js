@@ -51,6 +51,16 @@ class OverworldEvent {
     document.addEventListener("PersonWalkingComplete", completeHandler);
   }
 
+  textMessage(resolve) {
+    const message = new TextMessage({
+      text: this.event.text,
+      onComplete: () => {
+        return resolve();
+      },
+    });
+    message.init(document.querySelector(".game-container"));
+  }
+
   init() {
     return new Promise((resolve) => {
       this[this.event.type](resolve);
