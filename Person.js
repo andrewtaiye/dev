@@ -37,11 +37,22 @@ class Person extends GameObject {
     if (behavior.type === "walk") {
       // Stop is tile is not free
       if (state.map.isSpaceTaken(this.x, this.y, this.direction)) {
+        behavior.retry &&
+          setTimeout(() => {
+            this.startBehavior(state, behavior);
+          }, 10);
         return;
       }
       // Ready to walk
       state.map.moveWall(this.x, this.y, this.direction);
       this.movementProgressRemaining = 16;
+      this.updateSprite(state);
+    }
+
+    if (behavior.type === "stand") {
+      setTimeout(() => {
+        utility.emitEvent("PersonStandingComplete", { whoId: this.id });
+      }, behavior.time);
     }
   }
 
@@ -49,6 +60,11 @@ class Person extends GameObject {
     const [property, change] = this.directionUpdate[this.direction];
     this[property] += change;
     this.movementProgressRemaining -= 1;
+
+    if (this.movementProgressRemaining === 0) {
+      // finished moving
+      utility.emitEvent("PersonWalkingComplete", { whoId: this.id });
+    }
   }
 
   updateSprite() {
