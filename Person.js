@@ -2,6 +2,7 @@ class Person extends GameObject {
   constructor(config) {
     super(config); // calls the constructor of a parent class
     this.movementProgressRemaining = 0;
+    this.isStanding = false;
 
     this.isPlayerControlled = config.isPlayerControlled || false;
 
@@ -54,9 +55,11 @@ class Person extends GameObject {
     }
 
     if (behavior.type === "stand") {
+      this.isStanding = true;
       setTimeout(() => {
         utility.emitEvent("PersonStandingComplete", { whoId: this.id });
       }, behavior.time);
+      this.isStanding = false;
     }
   }
 
