@@ -50,5 +50,11 @@ class World {
     this.directionInput.init();
 
     this.startGameLoop();
+
+    this.map.startCutscene([
+      { who: "hero", type: "walk", direction: "down" },
+      { who: "hero", type: "walk", direction: "right" },
+      { who: "hero", type: "stand", direction: "right", time: 800 },
+    ]);
   }
 }
