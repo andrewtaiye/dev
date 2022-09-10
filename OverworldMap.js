@@ -1,7 +1,9 @@
 class OverworldMap {
   constructor(config) {
+    this.world = null;
     this.gameObjects = config.gameObjects;
 
+    this.cutsceneSpaces = config.cutsceneSpaces || {};
     this.walls = config.walls || {};
 
     this.lowerImage = new Image();
@@ -73,6 +75,20 @@ class OverworldMap {
     }
   }
 
+  checkForFootstepCutscene() {
+    const hero = this.gameObjects["hero"];
+    const match = this.cutsceneSpaces[`${hero.x},${hero.y}`];
+    if (!this.isCutscenePlaying && match) {
+      // Check if the event has not yet been completed
+      if (!match[0].eventCompleted) {
+        // If event is not yet completed, run event
+        this.startCutscene(match[0].events);
+        // After event is run, set the event completed flag to true
+        // match[0].eventCompleted = true;
+      }
+    }
+  }
+
   addWall(x, y) {
     this.walls[`${x},${y}`] = true;
   }
@@ -102,12 +118,12 @@ window.OverworldMaps = {
         x: utility.withGrid(17),
         y: utility.withGrid(9),
         src: "assets/characters/people/npc1.png",
-        behaviorLoop: [
-          { type: "walk", direction: "down" },
-          { type: "stand", direction: "left", time: 1200 },
-          { type: "walk", direction: "up" },
-          { type: "stand", direction: "down", time: 1500 },
-        ],
+        // behaviorLoop: [
+        //   { type: "walk", direction: "down" },
+        //   { type: "stand", direction: "left", time: 1200 },
+        //   { type: "walk", direction: "up" },
+        //   { type: "stand", direction: "down", time: 1500 },
+        // ],
         talking: [
           {
             events: [
@@ -120,8 +136,8 @@ window.OverworldMaps = {
                 type: "textMessage",
                 text: "Which hole did you crawl out from?",
               },
-              { type: "textMessage", text: "Go away, leave me alone." },
             ],
+            // eventCompleted: false,
           },
         ],
       }),
@@ -144,9 +160,49 @@ window.OverworldMaps = {
           { type: "walk", direction: "left" },
           { type: "stand", direction: "down", time: 800 },
         ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "I'm busy can't you see?",
+                faceHero: "npc2",
+              },
+              { type: "textMessage", text: "Go away, leave me alone." },
+            ],
+            // eventCompleted: false,
+          },
+        ],
       }),
     },
+    cutsceneSpaces: {
+      [utility.asGridCoord(18, 11)]: [
+        {
+          events: [
+            { who: "npc1", type: "walk", direction: "down" },
+            { who: "npc1", type: "walk", direction: "down" },
+            { who: "npc1", type: "stand", direction: "right" },
+            { who: "hero", type: "stand", direction: "left" },
+            {
+              type: "textMessage",
+              text: "Hey! You can't go out there like that!",
+            },
+            { who: "npc1", type: "walk", direction: "up" },
+            { who: "npc1", type: "walk", direction: "up" },
+            { who: "npc1", type: "stand", direction: "down" },
+            { who: "hero", type: "walk", direction: "left" },
+          ],
+        },
+      ],
+      [utility.asGridCoord(18, 4)]: [
+        {
+          events: [{ type: "changeMap", map: "Overworld" }],
+        },
+      ],
+    },
     walls: {
+      // Object used here instead of array so that the lookup for each wall is cleaner (rather than iterating through the entire array each time)
+      // Square brackets here tells JS that this is a dynamic key which evaluates to a string (i.e. whatever is returned from the function within the brackets is turned into a string)
       [utility.asGridCoord(14, 3)]: true,
       [utility.asGridCoord(15, 3)]: true,
       [utility.asGridCoord(16, 3)]: true,

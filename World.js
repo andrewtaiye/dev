@@ -49,11 +49,26 @@ class World {
     });
   }
 
-  init() {
-    this.map = new OverworldMap(window.OverworldMaps.Overworld);
+  bindHeroPositionCheck() {
+    document.addEventListener("PersonWalkingComplete", (event) => {
+      if (event.detail.whoId === "hero") {
+        // Hero's position has changed
+        this.map.checkForFootstepCutscene();
+      }
+    });
+  }
+
+  startMap(mapConfig) {
+    this.map = new OverworldMap(mapConfig);
+    this.map.world = this;
     this.map.mountObjects();
+  }
+
+  init() {
+    this.startMap(window.OverworldMaps.Overworld);
 
     this.bindActionInput();
+    this.bindHeroPositionCheck();
 
     this.directionInput = new DirectionInput();
     this.directionInput.init();
