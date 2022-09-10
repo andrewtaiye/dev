@@ -176,6 +176,7 @@ window.OverworldMaps = {
       }),
     },
     cutsceneSpaces: {
+      // Spaces to trigger interactions with NPCs
       [utility.asGridCoord(18, 11)]: [
         {
           events: [
@@ -191,14 +192,16 @@ window.OverworldMaps = {
             { who: "npc1", type: "walk", direction: "up" },
             { who: "npc1", type: "stand", direction: "down" },
             { who: "hero", type: "walk", direction: "left" },
+            { who: "hero", type: "stand", direction: "up" },
           ],
         },
       ],
-      [utility.asGridCoord(18, 4)]: [
-        {
-          events: [{ type: "changeMap", map: "Overworld" }],
-        },
-      ],
+      // Spaces to trigger map changes (currently not used)
+      // [utility.asGridCoord(18, 4)]: [
+      //   {
+      //     events: [{ type: "changeMap", map: "Overworld" }],
+      //   },
+      // ],
     },
     walls: {
       // Object used here instead of array so that the lookup for each wall is cleaner (rather than iterating through the entire array each time)
