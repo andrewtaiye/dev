@@ -17,6 +17,11 @@ class TextMessage {
       // Close the text message.
       this.done();
     });
+
+    this.actionListener = new KeypressListener("KeyZ", () => {
+      this.actionListener.unbind();
+      this.done();
+    });
   }
 
   done() {

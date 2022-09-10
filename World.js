@@ -42,20 +42,29 @@ class World {
     step();
   }
 
+  bindActionInput() {
+    new KeypressListener("KeyZ", () => {
+      // Is there a person here to talk to?
+      this.map.checkForActionCutscene();
+    });
+  }
+
   init() {
     this.map = new OverworldMap(window.OverworldMaps.Overworld);
     this.map.mountObjects();
+
+    this.bindActionInput();
 
     this.directionInput = new DirectionInput();
     this.directionInput.init();
 
     this.startGameLoop();
 
-    this.map.startCutscene([
-      { type: "textMessage", text: "Where the hell am I..." },
-      // { who: "hero", type: "walk", direction: "down" },
-      // { who: "hero", type: "walk", direction: "right" },
-      // { who: "hero", type: "stand", direction: "right", time: 800 },
-    ]);
+    // this.map.startCutscene([
+    //   { type: "textMessage", text: "Where the hell am I..." },
+    //   // { who: "hero", type: "walk", direction: "down" },
+    //   // { who: "hero", type: "walk", direction: "right" },
+    //   // { who: "hero", type: "stand", direction: "right", time: 800 },
+    // ]);
   }
 }

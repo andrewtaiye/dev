@@ -62,6 +62,17 @@ class OverworldMap {
     });
   }
 
+  checkForActionCutscene() {
+    const hero = this.gameObjects["hero"];
+    const nextCoords = utility.nextPosition(hero.x, hero.y, hero.direction);
+    const match = Object.values(this.gameObjects).find((object) => {
+      return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`;
+    });
+    if (!this.isCutscenePlaying && match && match.talking.length) {
+      this.startCutscene(match.talking[0].events);
+    }
+  }
+
   addWall(x, y) {
     this.walls[`${x},${y}`] = true;
   }
@@ -96,6 +107,22 @@ window.OverworldMaps = {
           { type: "stand", direction: "left", time: 1200 },
           { type: "walk", direction: "up" },
           { type: "stand", direction: "down", time: 1500 },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Who the hell are you?",
+                faceHero: "npc1",
+              },
+              {
+                type: "textMessage",
+                text: "Which hole did you crawl out from?",
+              },
+              { type: "textMessage", text: "Go away, leave me alone." },
+            ],
+          },
         ],
       }),
       npc2: new Person({
