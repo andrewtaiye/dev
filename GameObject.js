@@ -42,7 +42,7 @@ class GameObject {
       }
       this.retryTimeout = setTimeout(() => {
         this.doBehaviorEvent(map);
-      }, 1000);
+      }, 10);
 
       return;
     }
