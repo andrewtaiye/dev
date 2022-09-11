@@ -16,11 +16,11 @@ class GameObject {
     this.behaviorLoopIndex = 0;
 
     this.talking = config.talking || [];
+    this.retryTimeout = null;
   }
 
   mount(map) {
     this.isMounted = true;
-    map.addWall(this.x, this.y);
 
     // if there is a behavior, start behavior after short delay
     setTimeout(() => {
@@ -32,11 +32,18 @@ class GameObject {
 
   async doBehaviorEvent(map) {
     // if a cutscene is playing or if the character does not have a behavior loop, stop the function.
-    if (
-      map.isCutscenePlaying ||
-      this.behaviorLoop.length === 0 ||
-      this.isStanding
-    ) {
+    if (this.behaviorLoop.length === 0 || this.isStanding) {
+      return;
+    }
+
+    if (map.isCutscenePlaying) {
+      if (this.retryTimeout) {
+        clearTimeout(this.retryTimeout);
+      }
+      this.retryTimeout = setTimeout(() => {
+        this.doBehaviorEvent(map);
+      }, 1000);
+
       return;
     }
 

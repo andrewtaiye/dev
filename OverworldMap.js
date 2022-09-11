@@ -1,7 +1,8 @@
 class OverworldMap {
   constructor(config) {
     this.world = null;
-    this.gameObjects = config.gameObjects;
+    this.gameObjects = {};
+    this.configObjects = config.configObjects;
 
     this.cutsceneSpaces = config.cutsceneSpaces || {};
     this.walls = config.walls || {};
@@ -33,14 +34,37 @@ class OverworldMap {
 
   isSpaceTaken(currentX, currentY, direction) {
     const { x, y } = utility.nextPosition(currentX, currentY, direction);
-    return this.walls[`${x},${y}`] || false;
+    if (this.walls[`${x},${y}`]) {
+      return true;
+    }
+
+    return Object.values(this.gameObjects).find((object) => {
+      if (object.x === x && object.y === y) {
+        return true;
+      }
+      if (
+        object.intentPosition &&
+        (object.intentPosition[0] === x) & (object.intentPosition[1] === y)
+      ) {
+        return true;
+      }
+      return false;
+    });
   }
 
   mountObjects() {
-    Object.keys(this.gameObjects).forEach((key) => {
-      let object = this.gameObjects[key];
+    Object.keys(this.configObjects).forEach((key) => {
+      let object = this.configObjects[key];
       object.id = key;
-      object.mount(this);
+
+      let instance;
+      if (object.type === "Person") {
+        instance = new Person(object);
+      }
+      this.gameObjects[key] = instance;
+      this.gameObjects[key].id = key;
+
+      instance.mount(this);
     });
   }
 
@@ -57,11 +81,6 @@ class OverworldMap {
     }
 
     this.isCutscenePlaying = false;
-
-    // Reset NPCs to do their idle behaviour
-    Object.values(this.gameObjects).forEach((object) => {
-      object.doBehaviorEvent(this);
-    });
   }
 
   checkForActionCutscene() {
@@ -88,33 +107,21 @@ class OverworldMap {
       }
     }
   }
-
-  addWall(x, y) {
-    this.walls[`${x},${y}`] = true;
-  }
-
-  removeWall(x, y) {
-    delete this.walls[`${x},${y}`];
-  }
-
-  moveWall(oldX, oldY, direction) {
-    this.removeWall(oldX, oldY);
-    const { x, y } = utility.nextPosition(oldX, oldY, direction);
-    this.addWall(x, y);
-  }
 }
 
 window.OverworldMaps = {
   Overworld: {
     lowerSrc: "assets/maps/overworldLower.png",
     upperSrc: "assets/maps/overworldUpper.png",
-    gameObjects: {
-      hero: new Person({
+    configObjects: {
+      hero: {
+        type: "Person",
         x: utility.withGrid(10),
         y: utility.withGrid(9),
         isPlayerControlled: true,
-      }),
-      npc1: new Person({
+      },
+      npc1: {
+        type: "Person",
         x: utility.withGrid(17),
         y: utility.withGrid(9),
         src: "assets/characters/people/npc1.png",
@@ -140,8 +147,9 @@ window.OverworldMaps = {
             // eventCompleted: false,
           },
         ],
-      }),
-      npc2: new Person({
+      },
+      npc2: {
+        type: "Person",
         x: utility.withGrid(12),
         y: utility.withGrid(8),
         src: "assets/characters/people/npc2.png",
@@ -173,7 +181,7 @@ window.OverworldMaps = {
             // eventCompleted: false,
           },
         ],
-      }),
+      },
     },
     cutsceneSpaces: {
       // Spaces to trigger interactions with NPCs

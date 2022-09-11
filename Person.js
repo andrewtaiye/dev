@@ -3,6 +3,7 @@ class Person extends GameObject {
     super(config); // calls the constructor of a parent class
     this.movementProgressRemaining = 0;
     this.isStanding = false;
+    this.intentPosition = null;
 
     this.isPlayerControlled = config.isPlayerControlled || false;
 
@@ -12,6 +13,7 @@ class Person extends GameObject {
       left: ["x", -1],
       right: ["x", 1],
     };
+    this.standingBehaviorTimeout;
   }
 
   update(state) {
@@ -48,16 +50,30 @@ class Person extends GameObject {
           }, 10);
         return;
       }
+
       // Ready to walk
-      state.map.moveWall(this.x, this.y, this.direction);
       this.movementProgressRemaining = 16;
+
+      const intentPosition = utility.nextPosition(
+        this.x,
+        this.y,
+        this.direction
+      );
+      this.intentPosition = [intentPosition.x, intentPosition.y];
+
       this.updateSprite(state);
     }
 
     if (behavior.type === "stand") {
       this.isStanding = true;
-      setTimeout(() => {
-        utility.emitEvent("PersonStandingComplete", { whoId: this.id });
+
+      if (this.standingBehaviorTimeout) {
+        clearTimeout(this.standingBehaviorTimeout);
+      }
+      this.standingBehaviorTimeout = setTimeout(() => {
+        utility.emitEvent("PersonStandingComplete", {
+          whoId: this.id,
+        });
         this.isStanding = false;
       }, behavior.time);
     }
@@ -70,6 +86,7 @@ class Person extends GameObject {
 
     if (this.movementProgressRemaining === 0) {
       // finished moving
+      this.intentPosition = null;
       utility.emitEvent("PersonWalkingComplete", { whoId: this.id });
     }
   }
