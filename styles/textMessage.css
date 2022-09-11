@@ -29,3 +29,11 @@
   right: 2px;
   bottom: 0;
 }
+
+.text-message span {
+  opacity: 0;
+}
+
+.text-message span.revealed {
+  opacity: 1;
+}
