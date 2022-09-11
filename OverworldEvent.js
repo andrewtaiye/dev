@@ -69,6 +69,10 @@ class OverworldEvent {
   }
 
   changeMap(resolve) {
+    Objects.values(this.map.gameObjects).forEach((object) => {
+      object.isMounted = false;
+    });
+
     this.map.world.startMap(window.OverworldMaps[this.event.map]);
     resolve();
   }
