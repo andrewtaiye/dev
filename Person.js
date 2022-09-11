@@ -58,8 +58,8 @@ class Person extends GameObject {
       this.isStanding = true;
       setTimeout(() => {
         utility.emitEvent("PersonStandingComplete", { whoId: this.id });
+        this.isStanding = false;
       }, behavior.time);
-      this.isStanding = false;
     }
   }
 
