@@ -1,18 +1,30 @@
 .combatant {
   width: 67px;
   height: 14px;
-  background: url("assets/ui/combatant-plate.png") no-repeat no-repeat;
+  background: url("../assets/ui/combatant-plate.png") no-repeat no-repeat;
   position: absolute;
 }
 
+.battle .combatant {
+  transform: scale(1);
+}
+
+.battle .combatant[data-active="true"] {
+  opacity: 1;
+}
+
+.battle .combatant[data-active="false"] {
+  opacity: 0;
+}
+
 .combatant[data-team="player"] {
-  left: 101px;
-  top: 70px;
+  left: 85px;
+  top: 50px;
 }
 
 .combatant[data-team="enemy"] {
-  top: 70px;
-  right: 99px;
+  top: 50px;
+  right: 80px;
 }
 
 .combatant-character-crop {
@@ -81,7 +93,7 @@
   right: 2px;
   top: -1px;
   width: 17px;
-  height: 17px;
+  height: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,4 +119,39 @@
 
 .combatant-status[data-status="clumsy"] {
   background: #582a79;
+}
+
+.sprite {
+  position: absolute;
+  transform: scale(2);
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  background: url("../assets/characters/shadow.png") no-repeat no-repeat;
+}
+
+.sprite[data-team="player"] {
+  bottom: 50%;
+  left: 101px;
+}
+
+.sprite[data-team="player"] img {
+  transform: translateY(-32px);
+}
+
+.sprite[data-team="enemy"] {
+  bottom: 50%;
+  right: 99px;
+}
+
+.sprite[data-team="enemy"] img {
+  transform: translateY(-96px);
+}
+
+.sprite[data-active="true"] {
+  opacity: 1;
+}
+
+.sprite[data-active="false"] {
+  opacity: 0;
 }
