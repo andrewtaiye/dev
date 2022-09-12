@@ -34,6 +34,19 @@ class TurnCycle {
       await this.onNewEvent(event);
     }
 
+    // check for post events (events after original turn submission)
+    const postEvents = caster.getPostEvents();
+    for (let i = 0; i < postEvents.length; i++) {
+      const event = {
+        ...postEvents[i],
+        submission,
+        action: submission.action,
+        caster,
+        target: submission.target,
+      };
+      await this.onNewEvent(event);
+    }
+
     this.currentTeam = this.currentTeam === "player" ? "enemy" : "player";
     this.turn();
   }

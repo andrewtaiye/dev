@@ -5,7 +5,7 @@ class Battle {
         {
           ...Fighters["hero"],
           team: "player",
-          hp: 50,
+          hp: 40,
           maxHp: 50,
           xp: 20,
           maxXp: 100,

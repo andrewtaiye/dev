@@ -91,6 +91,17 @@ class Combatant {
     }
   }
 
+  getPostEvents() {
+    if (this.status?.type === "Healing") {
+      return [
+        { type: "textMessage", text: "Healing HP!" },
+        { type: "stateChange", recover: 5, onCaster: true },
+      ];
+    } else {
+      return [];
+    }
+  }
+
   init(container) {
     this.createElement();
     container.appendChild(this.hudElement);
