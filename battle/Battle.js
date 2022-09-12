@@ -12,7 +12,7 @@ class Battle {
           level: 1,
           status: {
             type: "Healing",
-            expiresIn: 3,
+            expiresIn: 1,
           },
         },
         this

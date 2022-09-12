@@ -93,13 +93,31 @@ class Combatant {
 
   getPostEvents() {
     if (this.status?.type === "Healing") {
+      // console.log(this.status);
       return [
         { type: "textMessage", text: "Healing HP!" },
         { type: "stateChange", recover: 5, onCaster: true },
       ];
-    } else {
-      return [];
     }
+
+    return [];
+  }
+
+  decrementStatus() {
+    if (this.status?.expiresIn > 0) {
+      this.status.expiresIn -= 1;
+      if (this.status.expiresIn === 0) {
+        const event = {
+          type: "textMessage",
+          text: `${this.status.type} has ended.`,
+        };
+        this.update({
+          status: null,
+        });
+        return event;
+      }
+    }
+    return null;
   }
 
   init(container) {
