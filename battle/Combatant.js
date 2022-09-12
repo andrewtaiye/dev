@@ -103,13 +103,30 @@ class Combatant {
     return [];
   }
 
+  getReplacedEvents(originalEvents) {
+    // console.log(this.status);
+    if (
+      this.status?.type === "Dizzy" &&
+      utility.randomFromArray([true, false])
+    ) {
+      return [
+        {
+          type: "textMessage",
+          text: `${this.name} is dizzy and could not attack!`,
+        },
+      ];
+    }
+    return originalEvents;
+  }
+
   decrementStatus() {
+    console.log(this);
     if (this.status?.expiresIn > 0) {
       this.status.expiresIn -= 1;
       if (this.status.expiresIn === 0) {
         const event = {
           type: "textMessage",
-          text: `${this.status.type} has ended.`,
+          text: `${this.name} is no longer ${this.status.type.toLowerCase()}!`,
         };
         this.update({
           status: null,

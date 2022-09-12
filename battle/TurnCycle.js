@@ -21,7 +21,8 @@ class TurnCycle {
       enemy,
     });
 
-    const resultingEvents = submission.action.success;
+    const resultingEvents = caster.getReplacedEvents(submission.action.success);
+
     for (let i = 0; i < resultingEvents.length; i++) {
       const event = {
         ...resultingEvents[i],
@@ -58,7 +59,7 @@ class TurnCycle {
   }
 
   async init() {
-    console.log(this);
+    // console.log(this);
     await this.onNewEvent({
       type: "textMessage",
       text: `${
