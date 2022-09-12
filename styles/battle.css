@@ -1,0 +1,87 @@
+.battle {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /* background-image: url("assets/maps/battle-bg.png"); */
+  background-color: cyan;
+  background-size: cover;
+  image-rendering: pixelated;
+}
+/* 
+.battle-hero,
+.battle-enemy {
+  position: absolute;
+  transform: scale(2);
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  background: url("../assets/characters/shadow.png") no-repeat no-repeat;
+}
+
+.battle-hero img,
+.battle-enemy img {
+  pointer-events: none;
+}
+
+.battle-hero {
+  bottom: 50%;
+  left: 101px;
+}
+
+.battle-hero img {
+  transform: translateY(-32px); /* Nudge spritesheet to select correct frame */ /*
+}
+
+.battle-enemy {
+  bottom: 50%;
+  right: 99px;
+}
+
+.battle-enemy img {
+  transform: translateY(-96px);
+} */
+
+/* Animations */
+@keyframes battle-damage-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.battle-damage-blink {
+  animation: battle-damage-blink 0.3s steps(2, start) infinite;
+}
+
+@keyframes battle-spin-right {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(2);
+  }
+  25% {
+    transform: translate3d(350%, -25%, 0) rotate(45deg) scale(2);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(2);
+  }
+}
+
+.battle-spin-right {
+  animation: battle-spin-right 0.8s;
+}
+
+@keyframes battle-spin-left {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(2);
+  }
+  25% {
+    transform: translate3d(-350%, 25%, 0) rotate(-45deg) scale(2);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(2);
+  }
+}
+
+.battle-spin-left {
+  animation: battle-spin-left 0.8s;
+}

@@ -11,7 +11,7 @@ class RevealText {
   revealOneCharacter(listOfCharacters) {
     const next = listOfCharacters.splice(0, 1)[0];
     next.span.classList.add("revealed");
-    console.log(listOfCharacters, next);
+    // console.log(listOfCharacters, next);
 
     if (listOfCharacters.length > 0) {
       this.timeout = setTimeout(() => {

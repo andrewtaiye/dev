@@ -7,11 +7,21 @@
     <title>Mis-Matched Adventure</title>
     <link href="styles/global.css" type="text/css" rel="stylesheet" />
     <link href="styles/textMessage.css" type="text/css" rel="stylesheet" />
+
+    <!-- Battle -->
+    <link rel="stylesheet" href="styles/battle.css" />
+    <link rel="stylesheet" href="styles/combatant.css" />
+    <link rel="stylesheet" href="styles/submissionMenu.css" />
+    <link rel="stylesheet" href="styles/team.css" />
   </head>
   <body>
     <div class="game-container">
       <canvas class="game-canvas" width="352" height="198"></canvas>
     </div>
+
+    <!-- Content -->
+    <script src="content/Fighters.js"></script>
+    <script src="content/Actions.js"></script>
 
     <!-- Scripts -->
     <script src="utility.js"></script>
@@ -25,6 +35,16 @@
     <script src="TextMessage.js"></script>
     <script src="KeypressListener.js"></script>
     <script src="RevealText.js"></script>
+
+    <!-- Battle -->
+    <script src="battle/Battle.js"></script>
+    <script src="battle/Combatant.js"></script>
+    <script src="battle/SubmissionMenu.js"></script>
+    <script src="battle/Team.js"></script>
+    <script src="battle/BattleEvent.js"></script>
+    <script src="battle/TurnCycle.js"></script>
+    <script src="battle/BattleAnimations.js"></script>
+
     <script src="init.js"></script>
   </body>
 </html>
