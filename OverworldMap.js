@@ -196,7 +196,7 @@ window.OverworldMaps = {
         isMonster: true,
         x: utility.withGrid(16),
         y: utility.withGrid(4),
-        src: "assets/characters/monsters/slime_blue.png",
+        src: "assets/characters/monsters/slime_green.png",
         talking: [
           {
             events: [
