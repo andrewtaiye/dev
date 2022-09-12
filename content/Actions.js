@@ -1,7 +1,7 @@
 window.Actions = {
   headbutt: {
     name: "Headbutt",
-    description: "Use your head!",
+    description: "Deals 15 damage",
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       { type: "animation", animation: "spin" },
@@ -23,7 +23,7 @@ window.Actions = {
   },
   tackle: {
     name: "Tackle",
-    description: "Tackle the opponent!",
+    description: "Deals 5 damage",
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       { type: "animation", animation: "spin" },
@@ -33,7 +33,7 @@ window.Actions = {
   healingStatus: {
     name: "Heal",
     targetType: "friendly",
-
+    description: "Heals 5HP for 2 turns",
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       {
@@ -51,6 +51,7 @@ window.Actions = {
   healingStatus2: {
     name: "Greater Heal",
     targetType: "friendly",
+    description: "Heals 10HP for 3 turns",
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       {

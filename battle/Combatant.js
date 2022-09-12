@@ -95,14 +95,14 @@ class Combatant {
     if (this.status?.type === "healing") {
       // console.log(this.status);
       return [
-        { type: "textMessage", text: "Healing HP!" },
+        { type: "textMessage", text: "Healed 5HP!" },
         { type: "stateChange", recover: 5, onCaster: true },
       ];
     }
     if (this.status?.type === "greaterHealing") {
       // console.log(this.status);
       return [
-        { type: "textMessage", text: "Healing HP!" },
+        { type: "textMessage", text: "Healed 10HP!" },
         { type: "stateChange", recover: 10, onCaster: true },
       ];
     }
