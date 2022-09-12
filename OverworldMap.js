@@ -59,7 +59,7 @@ class OverworldMap {
 
       let instance;
       if (object.type === "Person") {
-        instance = new Person(object);
+        instance = new Person(object, this.isCutscenePlaying);
       }
       this.gameObjects[key] = instance;
       this.gameObjects[key].id = key;
@@ -69,6 +69,11 @@ class OverworldMap {
   }
 
   async startCutscene(events) {
+    Object.keys(this.gameObjects).forEach((key) => {
+      let object = this.gameObjects[key];
+      object.isCutscenePlaying = true;
+    });
+
     this.isCutscenePlaying = true;
 
     // start loop of async events and await each one
@@ -80,6 +85,10 @@ class OverworldMap {
       await eventHandler.init();
     }
 
+    Object.keys(this.gameObjects).forEach((key) => {
+      let object = this.gameObjects[key];
+      object.isCutscenePlaying = false;
+    });
     this.isCutscenePlaying = false;
   }
 
@@ -194,7 +203,6 @@ window.OverworldMaps = {
               {
                 type: "textMessage",
                 text: "I'm busy can't you see?",
-                faceHero: "npc2",
               },
               { type: "textMessage", text: "Go away, leave me alone." },
             ],

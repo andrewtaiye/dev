@@ -1,7 +1,8 @@
 class GameObject {
-  constructor(config) {
+  constructor(config, isCutscenePlaying) {
     this.id = null;
     this.isMounted = false;
+    this.isCutscenePlaying = isCutscenePlaying;
 
     this.x = config.x || 0; // x position data. to be passed through when GameObject is created, defaults to 0
     this.y = config.y || 0; // y position data. to be passed through when GameObject is created, defaults to 0
