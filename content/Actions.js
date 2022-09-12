@@ -11,7 +11,7 @@ window.Actions = {
           type: "Dizzy",
           targetType: "friendly",
           isApplied: [true, false], // array to decide whether it is applied. Here is 50% chance.
-          expiresIn: 2,
+          expiresIn: 3,
           statusEvents: [
             { type: "textMessage", text: "{CASTER} became dizzy!" },
           ],
@@ -21,12 +21,18 @@ window.Actions = {
   },
   healingStatus: {
     name: "Heal",
+    targetType: "friendly",
 
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       {
         type: "stateChange",
-        status: { type: "Healing", targetType: "friendly", expiresIn: 2 },
+        status: {
+          type: "Healing",
+          targetType: "friendly",
+          isApplied: [true],
+          expiresIn: 2,
+        },
       },
     ],
   },
@@ -37,7 +43,12 @@ window.Actions = {
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       {
         type: "stateChange",
-        status: { type: "Healing", targetType: "friendly", expiresIn: 5 },
+        status: {
+          type: "Healing",
+          targetType: "friendly",
+          isApplied: [true],
+          expiresIn: 5,
+        },
       },
     ],
   },

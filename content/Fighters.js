@@ -8,7 +8,7 @@ window.Fighters = {
     type: FighterTypes.normal,
     src: "./assets/characters/people/hero.png",
     icon: "./assets/icons/chill.png",
-    actions: ["headbutt", "healingStatus"],
+    actions: ["headbutt", "healingStatus", "healingStatus2"],
   },
   greenSlime: {
     name: "Green Slime",

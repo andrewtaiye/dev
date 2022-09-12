@@ -44,15 +44,16 @@ class BattleEvent {
       });
     }
 
-    let statusApplied = utility.randomFromArray(status.isApplied);
-    // console.log(statusApplied);
-    if (status && statusApplied) {
-      if (status.targetType === "friendly") {
+    if (status) {
+      let statusApplied = utility.randomFromArray(status.isApplied);
+      console.log(who.name);
+      if (statusApplied && status.targetType === "friendly") {
         who = caster;
+        console.log(who.name);
+        who.update({
+          status: { ...status },
+        });
       }
-      who.update({
-        status: { ...status },
-      });
     }
 
     if (status === null) {
