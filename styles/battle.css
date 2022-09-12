@@ -42,3 +42,14 @@
 .battle-enemy img {
   transform: translateY(-96px);
 } */
+
+/* Animations */
+@keyframes battle-damage-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.battle-damage-blink {
+  animation: battle-damage-blink 0.3s steps(2, start) infinite;
+}

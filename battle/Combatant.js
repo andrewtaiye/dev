@@ -71,12 +71,12 @@ class Combatant {
 
     this.hpFill.forEach((rect) => {
       rect.style.width = `${this.hpPercent}%`;
-      console.log(this.hpPercent);
+      // console.log(this.hpPercent);
     });
 
     this.xpFill.forEach((rect) => {
       rect.style.width = `${this.xpPercent}%`;
-      console.log(this.xpPercent);
+      // console.log(this.xpPercent);
     });
 
     this.hudElement.querySelector(".combatant-level").innerText = this.level;
