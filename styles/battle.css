@@ -9,7 +9,7 @@
   background-size: cover;
   image-rendering: pixelated;
 }
-
+/* 
 .battle-hero,
 .battle-enemy {
   position: absolute;
@@ -31,7 +31,7 @@
 }
 
 .battle-hero img {
-  transform: translateY(-32px); /* Nudge spritesheet to select correct frame */
+  transform: translateY(-32px); /* Nudge spritesheet to select correct frame */ /*
 }
 
 .battle-enemy {
@@ -41,4 +41,4 @@
 
 .battle-enemy img {
   transform: translateY(-96px);
-}
+} */
