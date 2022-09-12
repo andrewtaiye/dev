@@ -1,12 +1,13 @@
 window.Actions = {
   headbutt: {
     name: "Headbutt",
+    description: "Use your head!",
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
       { type: "animation", animation: "spin" },
       {
         type: "stateChange",
-        damage: 10,
+        damage: 15,
         status: {
           type: "Dizzy",
           targetType: "friendly",
@@ -17,6 +18,15 @@ window.Actions = {
           ],
         },
       },
+    ],
+  },
+  tackle: {
+    name: "Tackle",
+    description: "Tackle the opponent!",
+    success: [
+      { type: "textMessage", text: "{CASTER} used {ACTION}!" },
+      { type: "animation", animation: "spin" },
+      { type: "stateChange", damage: 5 },
     ],
   },
   healingStatus: {
