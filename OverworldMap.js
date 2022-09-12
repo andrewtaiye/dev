@@ -182,6 +182,26 @@ window.OverworldMaps = {
           },
         ],
       },
+      slime001: {
+        type: "Person",
+        isMonster: true,
+        x: utility.withGrid(16),
+        y: utility.withGrid(4),
+        src: "assets/characters/monsters/Slime_Medium_Blue.png",
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "I'm busy can't you see?",
+                faceHero: "npc2",
+              },
+              { type: "textMessage", text: "Go away, leave me alone." },
+            ],
+            // eventCompleted: false,
+          },
+        ],
+      },
     },
     cutsceneSpaces: {
       // Spaces to trigger interactions with NPCs

@@ -6,6 +6,7 @@ class Person extends GameObject {
     this.intentPosition = null;
 
     this.isPlayerControlled = config.isPlayerControlled || false;
+    this.isMonster = config.isMonster || false;
 
     this.directionUpdate = {
       up: ["y", -1],
@@ -98,6 +99,10 @@ class Person extends GameObject {
   updateSprite() {
     if (this.movementProgressRemaining > 0) {
       this.sprite.setAnimation("walk-" + this.direction);
+      return;
+    }
+    if (this.isMonster) {
+      this.sprite.setAnimation("idle");
       return;
     }
     this.sprite.setAnimation("idle-" + this.direction);
