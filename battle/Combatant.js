@@ -83,7 +83,7 @@ class Combatant {
 
     const statusElement = this.hudElement.querySelector(".combatant-status");
     if (this.status) {
-      statusElement.innerText = this.status.type;
+      statusElement.innerText = this.status.category;
       statusElement.style.display = "block";
     } else {
       statusElement.innerText = "";
@@ -92,11 +92,18 @@ class Combatant {
   }
 
   getPostEvents() {
-    if (this.status?.type === "Healing") {
+    if (this.status?.type === "healing") {
       // console.log(this.status);
       return [
         { type: "textMessage", text: "Healing HP!" },
         { type: "stateChange", recover: 5, onCaster: true },
+      ];
+    }
+    if (this.status?.type === "greaterHealing") {
+      // console.log(this.status);
+      return [
+        { type: "textMessage", text: "Healing HP!" },
+        { type: "stateChange", recover: 10, onCaster: true },
       ];
     }
 
@@ -106,7 +113,7 @@ class Combatant {
   getReplacedEvents(originalEvents) {
     // console.log(this.status);
     if (
-      this.status?.type === "Dizzy" &&
+      this.status?.type === "dizzy" &&
       utility.randomFromArray([true, false]) // check if combatant is able to attack. if false, combatant will not attack.
     ) {
       return [
@@ -126,7 +133,9 @@ class Combatant {
       if (this.status.expiresIn === 0) {
         const event = {
           type: "textMessage",
-          text: `${this.name} is no longer ${this.status.type.toLowerCase()}!`,
+          text: `${
+            this.name
+          } is no longer ${this.status.category.toLowerCase()}!`,
         };
         this.update({
           status: null,

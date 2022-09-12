@@ -9,7 +9,8 @@ window.Actions = {
         type: "stateChange",
         damage: 15,
         status: {
-          type: "Dizzy",
+          type: "dizzy",
+          category: "Dizzy",
           targetType: "friendly",
           isApplied: [true, false], // array to decide whether it is applied. Here is 50% chance.
           expiresIn: 3,
@@ -38,7 +39,8 @@ window.Actions = {
       {
         type: "stateChange",
         status: {
-          type: "Healing",
+          type: "healing",
+          category: "Healing",
           targetType: "friendly",
           isApplied: [true],
           expiresIn: 2,
@@ -54,10 +56,11 @@ window.Actions = {
       {
         type: "stateChange",
         status: {
-          type: "Healing",
+          type: "greaterHealing",
+          category: "Healing",
           targetType: "friendly",
           isApplied: [true],
-          expiresIn: 5,
+          expiresIn: 3,
         },
       },
     ],
