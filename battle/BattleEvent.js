@@ -51,6 +51,11 @@ class BattleEvent {
     menu.init(this.battle.element);
   }
 
+  animation(resolve) {
+    const fn = window.BattleAnimations[this.event.animation];
+    fn(this.event, resolve);
+  }
+
   init(resolve) {
     this[this.event.type](resolve);
   }

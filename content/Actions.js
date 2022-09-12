@@ -3,7 +3,7 @@ window.Actions = {
     name: "Headbutt",
     success: [
       { type: "textMessage", text: "{CASTER} used {ACTION}!" },
-      //   { type: "animation", animation: "toBeDefined" },
+      { type: "animation", animation: "spin" },
       { type: "stateChange", damage: 10 },
     ],
   },
