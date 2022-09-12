@@ -46,10 +46,9 @@ class BattleEvent {
 
     if (status) {
       let statusApplied = utility.randomFromArray(status.isApplied);
-      console.log(who.name);
       if (statusApplied && status.targetType === "friendly") {
         who = caster;
-        console.log(who.name);
+        // console.log(this);
         who.update({
           status: { ...status },
         });
