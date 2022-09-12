@@ -76,10 +76,8 @@ class World {
     this.startGameLoop();
 
     this.map.startCutscene([
-      { type: "textMessage", text: "Where the hell am I..." },
-      // { who: "hero", type: "walk", direction: "down" },
-      // { who: "hero", type: "walk", direction: "right" },
-      // { who: "hero", type: "stand", direction: "right", time: 800 },
+      // { type: "textMessage", text: "Where the hell am I..." },
+      { type: "battle" },
     ]);
   }
 }

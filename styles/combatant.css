@@ -1,0 +1,110 @@
+.combatant {
+  width: 67px;
+  height: 14px;
+  background: url("assets/ui/combatant-plate.png") no-repeat no-repeat;
+  position: absolute;
+}
+
+.combatant[data-team="player"] {
+  left: 101px;
+  top: 70px;
+}
+
+.combatant[data-team="enemy"] {
+  top: 70px;
+  right: 99px;
+}
+
+.combatant-character-crop {
+  position: absolute;
+  bottom: 1px;
+  left: 3px;
+  width: 22px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.combatant-character {
+  display: block;
+  position: absolute;
+  left: -11px;
+  bottom: -7px;
+}
+
+.battle .combatant-character-crop {
+  display: none;
+}
+
+.combatant-name {
+  position: absolute;
+  left: -2px;
+  top: -8px;
+  white-space: nowrap;
+  background: var(--menu-font-color);
+  color: #fff;
+  font-size: 5px;
+  padding: 0 2px;
+  margin: 0;
+}
+
+.combatant-type {
+  position: absolute;
+  left: 3px;
+  top: -2px;
+  width: 16px;
+  height: 16px;
+}
+
+.combatant-life-container {
+  position: absolute;
+  left: 20px;
+  top: 4px;
+  width: 26px;
+  height: 3px;
+}
+
+.combatant-life-container > rect {
+  transition: width 0.2s;
+}
+
+.combatant-xp-container {
+  position: absolute;
+  left: 20px;
+  top: 8px;
+  width: 26px;
+  height: 2px;
+}
+
+.combatant-level {
+  position: absolute;
+  font-size: 12px;
+  right: 2px;
+  top: -1px;
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8c594;
+  border: 1px solid #a48465;
+  margin: 0;
+}
+
+.combatant-status {
+  position: absolute;
+  font-size: 5px;
+  left: 47px;
+  bottom: -3px;
+  padding: 0 2px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  margin: 0;
+}
+
+.combatant-state[data-status="saucy"] {
+  color: red;
+}
+
+.combatant-status[data-status="clumsy"] {
+  background: #582a79;
+}

@@ -77,6 +77,15 @@ class OverworldEvent {
     resolve();
   }
 
+  battle(resolve) {
+    const battle = new Battle({
+      onComplete: () => {
+        return resolve();
+      },
+    });
+    battle.init(document.querySelector(".game-container"));
+  }
+
   init() {
     return new Promise((resolve) => {
       this[this.event.type](resolve);
