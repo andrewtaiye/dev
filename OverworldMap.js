@@ -221,9 +221,8 @@ window.OverworldMaps = {
             events: [
               {
                 type: "textMessage",
-                text: "I'm busy can't you see?",
+                text: "Rawr! I'm a baby dragon!",
               },
-              { type: "battle" },
             ],
             // eventCompleted: false,
           },
