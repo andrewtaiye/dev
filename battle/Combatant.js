@@ -80,6 +80,15 @@ class Combatant {
     });
 
     this.hudElement.querySelector(".combatant-level").innerText = this.level;
+
+    const statusElement = this.hudElement.querySelector(".combatant-status");
+    if (this.status) {
+      statusElement.innerText = this.status.type;
+      statusElement.style.display = "block";
+    } else {
+      statusElement.innerText = "";
+      statusElement.style.display = "none";
+    }
   }
 
   init(container) {

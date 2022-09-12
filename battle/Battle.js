@@ -10,7 +10,10 @@ class Battle {
           xp: 20,
           maxXp: 100,
           level: 1,
-          status: null,
+          status: {
+            type: "Healing",
+            expiresIn: 3,
+          },
         },
         this
       ),
