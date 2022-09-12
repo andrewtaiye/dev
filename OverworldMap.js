@@ -196,7 +196,7 @@ window.OverworldMaps = {
         isMonster: true,
         x: utility.withGrid(16),
         y: utility.withGrid(4),
-        src: "assets/characters/monsters/Slime_Medium_Blue.png",
+        src: "assets/characters/monsters/slime_blue.png",
         talking: [
           {
             events: [
@@ -204,7 +204,26 @@ window.OverworldMaps = {
                 type: "textMessage",
                 text: "I'm busy can't you see?",
               },
-              { type: "textMessage", text: "Go away, leave me alone." },
+              { type: "battle" },
+            ],
+            // eventCompleted: false,
+          },
+        ],
+      },
+      dragon001: {
+        type: "Person",
+        isMonster: true,
+        x: utility.withGrid(16),
+        y: utility.withGrid(6),
+        src: "assets/characters/monsters/dragon_baby_bronze.png",
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "I'm busy can't you see?",
+              },
+              { type: "battle" },
             ],
             // eventCompleted: false,
           },
