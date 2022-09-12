@@ -7,9 +7,16 @@ window.Actions = {
       {
         type: "stateChange",
         damage: 10,
-        status: { type: "Dizzy", targetType: "friendly", expiresIn: 2 },
+        status: {
+          type: "Dizzy",
+          targetType: "friendly",
+          isApplied: [true, false], // array to decide whether it is applied. Here is 50% chance.
+          expiresIn: 2,
+          statusEvents: [
+            { type: "textMessage", text: "{CASTER} became dizzy!" },
+          ],
+        },
       },
-      { type: "textMessage", text: "{CASTER} became dizzy!" },
     ],
   },
   healingStatus: {

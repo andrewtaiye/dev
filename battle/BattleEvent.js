@@ -44,7 +44,9 @@ class BattleEvent {
       });
     }
 
-    if (status) {
+    let statusApplied = utility.randomFromArray(status.isApplied);
+    // console.log(statusApplied);
+    if (status && statusApplied) {
       if (status.targetType === "friendly") {
         who = caster;
       }

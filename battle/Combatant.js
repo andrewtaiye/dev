@@ -107,7 +107,7 @@ class Combatant {
     // console.log(this.status);
     if (
       this.status?.type === "Dizzy" &&
-      utility.randomFromArray([true, false])
+      utility.randomFromArray([true, false]) // check if combatant is able to attack. if false, combatant will not attack.
     ) {
       return [
         {
@@ -120,7 +120,7 @@ class Combatant {
   }
 
   decrementStatus() {
-    console.log(this);
+    // console.log(this);
     if (this.status?.expiresIn > 0) {
       this.status.expiresIn -= 1;
       if (this.status.expiresIn === 0) {
