@@ -1,6 +1,8 @@
 class Battle {
-  constructor({ enemy, onComplete }) {
+  constructor({ map, enemy, overworldId, onComplete }) {
+    this.map = map;
     this.enemy = enemy;
+    this.overworldId = overworldId;
     this.onComplete = onComplete;
 
     this.combatants = {
@@ -55,10 +57,8 @@ class Battle {
     window.playerState.lineUp.forEach((id) => {
       this.addCombatant(id, "player", window.playerState.fighters[id]);
     });
-    console.log(this.enemy);
     // Dynamically add enemy
     Object.keys(this.enemy.fighters).forEach((key) => {
-      console.log(this.enemy.fighters[key]);
       this.addCombatant("e_" + key, "enemy", this.enemy.fighters[key]);
     });
 
@@ -135,6 +135,8 @@ class Battle {
               playerStateFighter.level = combatant.level;
             }
           });
+
+          console.log(this);
 
           // get rid of player used items
           playerState.items = playerState.items.filter((item) => {

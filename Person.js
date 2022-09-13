@@ -1,10 +1,10 @@
 class Person extends GameObject {
-  constructor(config, isCutscenePlaying) {
+  constructor(config, map) {
     super(config); // calls the constructor of a parent class
     this.movementProgressRemaining = 0;
     this.isStanding = false;
     this.intentPosition = null;
-    this.isCutscenePlaying = isCutscenePlaying;
+    this.map = map;
 
     this.isPlayerControlled = config.isPlayerControlled || false;
     this.isMonster = config.isMonster || false;
@@ -102,7 +102,7 @@ class Person extends GameObject {
       this.sprite.setAnimation("walk-" + this.direction);
       return;
     }
-    if (this.isMonster && !this.isCutscenePlaying) {
+    if (this.isMonster && !this.map.isCutscenePlaying) {
       // console.log(this);
       this.sprite.setAnimation("idle");
       return;

@@ -89,7 +89,6 @@ class TurnCycle {
 
     // Do we have a winning team?
     const winner = this.getWinningTeam();
-    console.log({ winner: winner });
     if (winner) {
       // End battle
       let endingMessage;
@@ -133,7 +132,6 @@ class TurnCycle {
 
   getWinningTeam() {
     let aliveTeams = {};
-    console.log({ combatants: this.battle.combatants });
     Object.values(this.battle.combatants).forEach((combatant) => {
       if (combatant.hp > 0) {
         aliveTeams[combatant.team] = true;

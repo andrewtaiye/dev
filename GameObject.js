@@ -1,8 +1,9 @@
 class GameObject {
-  constructor(config, isCutscenePlaying) {
+  constructor(config, map) {
     this.id = null;
     this.isMounted = false;
-    this.isCutscenePlaying = isCutscenePlaying;
+    this.isAlive = config.isAlive;
+    this.map = map;
 
     this.x = config.x || 0; // x position data. to be passed through when GameObject is created, defaults to 0
     this.y = config.y || 0; // y position data. to be passed through when GameObject is created, defaults to 0
@@ -22,6 +23,7 @@ class GameObject {
 
   mount(map) {
     this.isMounted = true;
+    console.log(this);
 
     // if there is a behavior, start behavior after short delay
     setTimeout(() => {

@@ -59,10 +59,11 @@ class OverworldMap {
 
       let instance;
       if (object.type === "Person") {
-        instance = new Person(object, this.isCutscenePlaying);
+        instance = new Person(object, this);
       }
       this.gameObjects[key] = instance;
       this.gameObjects[key].id = key;
+      this.gameObjects[key].isAlive = true;
 
       instance.mount(this);
     });
@@ -204,7 +205,11 @@ window.OverworldMaps = {
                 type: "textMessage",
                 text: "I'm busy can't you see?",
               },
-              { type: "battle", enemyId: "greenSlime" },
+              {
+                type: "battle",
+                enemyId: "greenSlime",
+                overworldId: "slime001",
+              },
             ],
             // eventCompleted: false,
           },
@@ -226,6 +231,7 @@ window.OverworldMaps = {
               {
                 type: "battle",
                 enemyId: "babyBronzeDragon",
+                overworldId: "dragon001",
               },
             ],
             // eventCompleted: false,

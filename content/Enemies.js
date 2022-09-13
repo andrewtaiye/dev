@@ -12,7 +12,7 @@ window.Enemies = {
     fighters: {
       babyBronzeDragon: {
         fighterId: "babyBronzeDragon",
-        maxHp: 50,
+        maxHp: 10,
         level: 1,
       },
     },

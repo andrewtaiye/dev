@@ -4,8 +4,8 @@
   right: 0;
   top: 0;
   bottom: 0;
-  /* background-image: url("assets/maps/battle-bg.png"); */
-  background-color: cyan;
+  background-image: url("../assets/maps/battle-bg.png");
+  /* background-color: cyan; */
   background-size: cover;
   image-rendering: pixelated;
 }

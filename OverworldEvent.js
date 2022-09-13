@@ -68,18 +68,20 @@ class OverworldEvent {
     message.init(document.querySelector(".game-container"));
   }
 
-  changeMap(resolve) {
-    Objects.values(this.map.gameObjects).forEach((object) => {
-      object.isMounted = false;
-    });
+  // changeMap(resolve) {
+  //   Objects.values(this.map.gameObjects).forEach((object) => {
+  //     object.isMounted = false;
+  //   });
 
-    this.map.world.startMap(window.OverworldMaps[this.event.map]);
-    resolve();
-  }
+  //   this.map.world.startMap(window.OverworldMaps[this.event.map]);
+  //   resolve();
+  // }
 
   battle(resolve) {
     const battle = new Battle({
+      map: this.map,
       enemy: window.Enemies[this.event.enemyId],
+      overworldId: this.event.overworldId,
       onComplete: () => {
         return resolve();
       },
