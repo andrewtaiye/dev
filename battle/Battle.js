@@ -5,7 +5,7 @@ class Battle {
         {
           ...Fighters["hero"],
           team: "player",
-          hp: 40,
+          hp: 50,
           maxHp: 50,
           xp: 20,
           maxXp: 100,
@@ -28,19 +28,19 @@ class Battle {
         },
         this
       ),
-      enemy2: new Combatant(
-        {
-          ...Fighters["blueSlime"],
-          team: "enemy",
-          hp: 50,
-          maxHp: 50,
-          xp: 70,
-          maxXp: 100,
-          level: 1,
-          status: null,
-        },
-        this
-      ),
+      // enemy2: new Combatant(
+      //   {
+      //     ...Fighters["blueSlime"],
+      //     team: "enemy",
+      //     hp: 50,
+      //     maxHp: 50,
+      //     xp: 70,
+      //     maxXp: 100,
+      //     level: 1,
+      //     status: null,
+      //   },
+      //   this
+      // ),
     };
     this.activeCombatants = {
       player: "player1",

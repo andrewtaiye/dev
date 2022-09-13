@@ -21,6 +21,19 @@ class TurnCycle {
       enemy,
     });
 
+    // Stop here is replacing main fighter
+    if (submission.replacement) {
+      await this.onNewEvent({
+        type: "replace",
+        replacement: submission.replacement,
+      });
+      await this.onNewEvent({
+        type: "textMessage",
+        text: "Go Get 'Em!",
+      });
+      return;
+    }
+
     let resultingEvents;
 
     if (submission.instanceId === null) {
@@ -44,6 +57,27 @@ class TurnCycle {
       await this.onNewEvent(event);
     }
 
+    // Did the target die?
+    const targetDead = submission.target.hp <= 0;
+    if (targetDead) {
+      await this.onNewEvent({
+        type: "textMessage",
+        text: `${submission.target.name} has no more HP!`,
+      });
+    }
+
+    // Do we have a winning team?
+    const winner = this.getWinningTeam();
+    console.log({ winner: winner });
+    if (winner) {
+      // End battle
+      await this.onNewEvent({
+        type: "textMessage",
+        text: "You have defeated you enemy!",
+      });
+      return;
+    }
+
     // check for post events (events after original turn submission)
     const postEvents = caster.getPostEvents();
     for (let i = 0; i < postEvents.length; i++) {
@@ -65,6 +99,23 @@ class TurnCycle {
 
     this.currentTeam = this.currentTeam === "player" ? "enemy" : "player";
     this.turn();
+  }
+
+  getWinningTeam() {
+    let aliveTeams = {};
+    console.log({ combatants: this.battle.combatants });
+    Object.values(this.battle.combatants).forEach((combatant) => {
+      if (combatant.hp > 0) {
+        aliveTeams[combatant.team] = true;
+      }
+    });
+    if (!aliveTeams["player"]) {
+      return "enemy";
+    }
+    if (!aliveTeams["enemy"]) {
+      return "player";
+    }
+    return null;
   }
 
   async init() {

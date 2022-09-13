@@ -48,7 +48,6 @@ class BattleEvent {
       let statusApplied = utility.randomFromArray(status.isApplied);
       if (statusApplied && status.targetType === "friendly") {
         who = caster;
-        // console.log(this);
         who.update({
           status: { ...status },
         });
@@ -71,10 +70,21 @@ class BattleEvent {
   }
 
   submissionMenu(resolve) {
+    const { caster } = this.event;
+
     const menu = new SubmissionMenu({
-      caster: this.event.caster,
+      caster: caster,
       enemy: this.event.enemy,
       items: this.battle.items,
+      replacements: Object.values(this.battle.combatants).filter(
+        (combatants) => {
+          return (
+            combatants.id !== caster.id &&
+            combatants.team === caster.team &&
+            combatants.hp > 0
+          );
+        }
+      ),
       onComplete: (submission) => {
         resolve(submission);
       },

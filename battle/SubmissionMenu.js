@@ -1,7 +1,8 @@
 class SubmissionMenu {
-  constructor({ caster, enemy, onComplete, items }) {
+  constructor({ caster, enemy, onComplete, items, replacements }) {
     this.caster = caster;
     this.enemy = enemy;
+    this.replacements = replacements;
     this.onComplete = onComplete;
 
     let quantityMap = {};
@@ -51,11 +52,11 @@ class SubmissionMenu {
           },
         },
         {
-          label: "Swap",
-          description: "Swap Something",
+          label: "Escape",
+          description: "Try to run away",
           handler: () => {
             // do something when chosen
-            console.log("go to swap page");
+            console.log("YOU CAN'T RUN AWAY");
           },
         },
       ],

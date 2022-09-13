@@ -114,7 +114,7 @@ class Combatant {
     // console.log(this.status);
     if (
       this.status?.type === "dizzy" &&
-      utility.randomFromArray([true, false]) // check if combatant is able to attack. if false, combatant will not attack.
+      utility.randomFromArray([true, true, false, false]) // check if combatant is able to attack. if false, combatant will not attack.
     ) {
       return [
         {
