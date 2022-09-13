@@ -7,7 +7,7 @@ class Battle {
           team: "player",
           hp: 50,
           maxHp: 50,
-          xp: 20,
+          xp: 95,
           maxXp: 100,
           level: 1,
           status: null,
@@ -19,7 +19,7 @@ class Battle {
         {
           ...Fighters["greenSlime"],
           team: "enemy",
-          hp: 50,
+          hp: 1,
           maxHp: 50,
           xp: 50,
           maxXp: 100,

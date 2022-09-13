@@ -64,6 +64,22 @@ class TurnCycle {
         type: "textMessage",
         text: `${submission.target.name} has no more HP!`,
       });
+
+      if (submission.target.team === "enemy") {
+        const playerActiveFighterId = this.battle.activeCombatants.player;
+        const xp = submission.target.givesXp;
+
+        await this.onNewEvent({
+          type: "textMessage",
+          text: `Gained ${xp}XP!`,
+        });
+
+        await this.onNewEvent({
+          type: "giveXp",
+          xp,
+          combatant: this.battle.combatants[playerActiveFighterId],
+        });
+      }
     }
 
     // Do we have a winning team?
