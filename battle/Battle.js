@@ -92,6 +92,7 @@ class Battle {
               playerStateFighter.xp = combatant.xp;
               playerStateFighter.maxXp = combatant.maxXp;
               playerStateFighter.level = combatant.level;
+              playerStateFighter.status = combatant.status;
             }
           });
 
