@@ -1,33 +1,36 @@
 class Battle {
-  constructor() {
+  constructor({ enemy, onComplete }) {
+    this.enemy = enemy;
+    this.onComplete = onComplete;
+
     this.combatants = {
-      player1: new Combatant(
-        {
-          ...Fighters["hero"],
-          team: "player",
-          hp: 50,
-          maxHp: 50,
-          xp: 95,
-          maxXp: 100,
-          level: 1,
-          status: null,
-          isPlayerControlled: true,
-        },
-        this
-      ),
-      enemy1: new Combatant(
-        {
-          ...Fighters["greenSlime"],
-          team: "enemy",
-          hp: 1,
-          maxHp: 50,
-          xp: 50,
-          maxXp: 100,
-          level: 1,
-          status: null,
-        },
-        this
-      ),
+      // player1: new Combatant(
+      //   {
+      //     ...Fighters["hero"],
+      //     team: "player",
+      //     hp: 50,
+      //     maxHp: 50,
+      //     xp: 95,
+      //     maxXp: 100,
+      //     level: 1,
+      //     status: null,
+      //     isPlayerControlled: true,
+      //   },
+      //   this
+      // ),
+      // enemy1: new Combatant(
+      //   {
+      //     ...Fighters["greenSlime"],
+      //     team: "enemy",
+      //     hp: 1,
+      //     maxHp: 50,
+      //     xp: 50,
+      //     maxXp: 100,
+      //     level: 1,
+      //     status: null,
+      //   },
+      //   this
+      // ),
       // enemy2: new Combatant(
       //   {
       //     ...Fighters["blueSlime"],
@@ -42,16 +45,39 @@ class Battle {
       //   this
       // ),
     };
+
     this.activeCombatants = {
-      player: "player1",
-      enemy: "enemy1",
+      player: null,
+      enemy: null,
     };
-    this.items = [
-      { actionId: "item_smallHpPotion", instanceId: "p1", team: "player" },
-      { actionId: "item_smallHpPotion", instanceId: "p2", team: "player" },
-      { actionId: "item_smallHpPotion", instanceId: "p3", team: "enemy" },
-      { actionId: "item_panadol", instanceId: "p4", team: "player" },
-    ];
+
+    // Dynamically add player
+    window.playerState.lineUp.forEach((id) => {
+      this.addCombatant(id, "player", window.playerState.fighters[id]);
+    });
+    console.log(this.enemy);
+    // Dynamically add enemy
+    Object.keys(this.enemy.fighters).forEach((key) => {
+      console.log(this.enemy.fighters[key]);
+      this.addCombatant("e_" + key, "enemy", this.enemy.fighters[key]);
+    });
+
+    this.items = [];
+  }
+
+  addCombatant(id, team, config) {
+    this.combatants[id] = new Combatant(
+      {
+        ...window.Fighters[config.fighterId],
+        ...config,
+        team,
+        isPlayerControlled: team === "player",
+      },
+      this
+    );
+
+    // Populate teams
+    this.activeCombatants[team] = this.activeCombatants[team] || id;
   }
 
   createElement() {

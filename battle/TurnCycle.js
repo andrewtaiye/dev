@@ -135,13 +135,13 @@ class TurnCycle {
   }
 
   async init() {
-    // console.log(this);
-    await this.onNewEvent({
-      type: "textMessage",
-      text: `${
-        this.battle.combatants[this.battle.activeCombatants.enemy].name
-      } is getting ready to attack!`,
-    });
+    // // console.log(this);
+    // await this.onNewEvent({
+    //   type: "textMessage",
+    //   text: `${
+    //     this.battle.combatants[this.battle.activeCombatants.enemy].name
+    //   } is getting ready to attack!`,
+    // });
 
     // start first turn
     this.turn();

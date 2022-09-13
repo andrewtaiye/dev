@@ -31,4 +31,11 @@ window.Fighters = {
     icon: "./assets/icons/chill.png",
     actions: ["headbutt", "heal"],
   },
+  babyBronzeDragon: {
+    name: "Baby Bronze Dragon",
+    type: FighterTypes.normal,
+    src: "./assets/characters/monsters/dragon_baby_bronze.png",
+    icon: "./assets/icons/chill.png",
+    actions: ["headbutt", "heal"],
+  },
 };
