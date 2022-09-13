@@ -29,7 +29,10 @@ class World {
       Object.values(this.map.gameObjects)
         .sort((a, b) => a.y - b.y)
         .forEach((object) => {
-          object.sprite.draw(this.ctx, cameraPerson);
+          // console.log(object);
+          if (object.isAlive) {
+            object.sprite.draw(this.ctx, cameraPerson);
+          }
         });
 
       // Draw Upper map

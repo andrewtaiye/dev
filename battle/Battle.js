@@ -95,7 +95,8 @@ class Battle {
             }
           });
 
-          console.log(this);
+          this.map.gameObjects[this.overworldId].isAlive = false;
+          this.map.gameObjects[this.overworldId].respawnTimer = 100;
 
           // get rid of player used items
           playerState.items = playerState.items.filter((item) => {

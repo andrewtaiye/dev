@@ -39,7 +39,7 @@ class OverworldMap {
     }
 
     return Object.values(this.gameObjects).find((object) => {
-      if (object.x === x && object.y === y) {
+      if (object.x === x && object.y === y && object.isAlive) {
         return true;
       }
       if (
@@ -99,7 +99,12 @@ class OverworldMap {
     const match = Object.values(this.gameObjects).find((object) => {
       return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`;
     });
-    if (!this.isCutscenePlaying && match && match.talking.length) {
+    if (
+      match.isAlive &&
+      !this.isCutscenePlaying &&
+      match &&
+      match.talking.length
+    ) {
       this.startCutscene(match.talking[0].events);
     }
   }

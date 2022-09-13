@@ -16,10 +16,19 @@ class Person extends GameObject {
       right: ["x", 1],
     };
     this.standingBehaviorTimeout;
+
+    this.respawnTimer = 0;
   }
 
   update(state) {
     // the state argument is the object passed to the update function during the game loop
+    if (!this.isAlive && this.respawnTimer > 0) {
+      this.respawnTimer -= 1;
+      if (this.respawnTimer === 0) {
+        this.isAlive = true;
+      }
+    }
+
     if (this.movementProgressRemaining > 0) {
       this.updatePosition();
     } else {

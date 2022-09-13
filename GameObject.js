@@ -2,7 +2,7 @@ class GameObject {
   constructor(config, map) {
     this.id = null;
     this.isMounted = false;
-    this.isAlive = config.isAlive;
+    this.isAlive = config.isAlive || false;
     this.map = map;
 
     this.x = config.x || 0; // x position data. to be passed through when GameObject is created, defaults to 0
@@ -23,7 +23,6 @@ class GameObject {
 
   mount(map) {
     this.isMounted = true;
-    console.log(this);
 
     // if there is a behavior, start behavior after short delay
     setTimeout(() => {
