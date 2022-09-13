@@ -29,7 +29,7 @@ window.Actions = {
       { type: "stateChange", damage: 5 },
     ],
   },
-  healingStatus: {
+  heal: {
     name: "Heal",
     targetType: "friendly",
     description: "Heals 5HP for 2 turns",
@@ -47,7 +47,7 @@ window.Actions = {
       },
     ],
   },
-  healingStatus2: {
+  greaterHeal: {
     name: "Greater Heal",
     targetType: "friendly",
     description: "Heals 10HP for 3 turns",
@@ -63,6 +63,26 @@ window.Actions = {
           expiresIn: 3,
         },
       },
+    ],
+  },
+  item_smallHpPotion: {
+    name: "Small Healing Potion",
+    description: "Heals 15HP",
+    targetType: "friendly",
+    success: [
+      { type: "textMessage", text: "{CASTER} used {ACTION}!" },
+      { type: "stateChange", recover: 15 },
+      { type: "textMessage", text: "Healed 15HP!" },
+    ],
+  },
+  item_panadol: {
+    name: "Panadol",
+    description: "Recovers from dizzy status",
+    targetType: "friendly",
+    success: [
+      { type: "textMessage", text: "{CASTER} used {ACTION}!" },
+      { type: "stateChange", status: null },
+      { type: "textMessage", text: "{CASTER} is no longer dizzy!" },
     ],
   },
 };

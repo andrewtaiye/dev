@@ -46,6 +46,12 @@ class Battle {
       player: "player1",
       enemy: "enemy1",
     };
+    this.items = [
+      { actionId: "item_smallHpPotion", instanceId: "p1", team: "player" },
+      { actionId: "item_smallHpPotion", instanceId: "p2", team: "player" },
+      { actionId: "item_smallHpPotion", instanceId: "p3", team: "enemy" },
+      { actionId: "item_panadol", instanceId: "p4", team: "player" },
+    ];
   }
 
   createElement() {

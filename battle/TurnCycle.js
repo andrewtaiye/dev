@@ -21,7 +21,16 @@ class TurnCycle {
       enemy,
     });
 
-    const resultingEvents = caster.getReplacedEvents(submission.action.success);
+    let resultingEvents;
+
+    if (submission.instanceId === null) {
+      resultingEvents = caster.getReplacedEvents(submission.action.success);
+    } else {
+      resultingEvents = submission.action.success;
+      this.battle.items = this.battle.items.filter(
+        (item) => item.instanceId !== submission.instanceId
+      );
+    }
 
     for (let i = 0; i < resultingEvents.length; i++) {
       const event = {
@@ -59,7 +68,7 @@ class TurnCycle {
   }
 
   async init() {
-    console.log(this);
+    // console.log(this);
     await this.onNewEvent({
       type: "textMessage",
       text: `${
