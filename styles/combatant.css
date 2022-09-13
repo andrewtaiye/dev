@@ -19,11 +19,11 @@
 
 .combatant[data-team="player"] {
   left: 85px;
-  top: 50px;
+  top: 65px;
 }
 
 .combatant[data-team="enemy"] {
-  top: 50px;
+  top: 65px;
   right: 80px;
 }
 
@@ -131,7 +131,7 @@
 }
 
 .sprite[data-team="player"] {
-  bottom: 50%;
+  bottom: 40%;
   left: 101px;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .sprite[data-team="enemy"] {
-  bottom: 50%;
+  bottom: 40%;
   right: 99px;
 }
 

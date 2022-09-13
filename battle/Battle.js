@@ -5,48 +5,7 @@ class Battle {
     this.overworldId = overworldId;
     this.onComplete = onComplete;
 
-    this.combatants = {
-      // player1: new Combatant(
-      //   {
-      //     ...Fighters["hero"],
-      //     team: "player",
-      //     hp: 50,
-      //     maxHp: 50,
-      //     xp: 95,
-      //     maxXp: 100,
-      //     level: 1,
-      //     status: null,
-      //     isPlayerControlled: true,
-      //   },
-      //   this
-      // ),
-      // enemy1: new Combatant(
-      //   {
-      //     ...Fighters["greenSlime"],
-      //     team: "enemy",
-      //     hp: 1,
-      //     maxHp: 50,
-      //     xp: 50,
-      //     maxXp: 100,
-      //     level: 1,
-      //     status: null,
-      //   },
-      //   this
-      // ),
-      // enemy2: new Combatant(
-      //   {
-      //     ...Fighters["blueSlime"],
-      //     team: "enemy",
-      //     hp: 50,
-      //     maxHp: 50,
-      //     xp: 70,
-      //     maxXp: 100,
-      //     level: 1,
-      //     status: null,
-      //   },
-      //   this
-      // ),
-    };
+    this.combatants = {};
 
     this.activeCombatants = {
       player: null,
