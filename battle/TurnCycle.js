@@ -1,7 +1,8 @@
 class TurnCycle {
-  constructor({ battle, onNewEvent }) {
+  constructor({ battle, onNewEvent, onWinner }) {
     this.battle = battle;
     this.onNewEvent = onNewEvent;
+    this.onWinner = onWinner;
     this.currentTeam = "player"; // or enemy
   }
 
@@ -39,10 +40,14 @@ class TurnCycle {
     if (submission.instanceId === null) {
       resultingEvents = caster.getReplacedEvents(submission.action.success);
     } else {
-      resultingEvents = submission.action.success;
+      // add to list to persist to player state
+      this.battle.usedInstanceIds[submission.instanceId] = true;
+
+      // removing item from battle state
       this.battle.items = this.battle.items.filter(
         (item) => item.instanceId !== submission.instanceId
       );
+      resultingEvents = submission.action.success;
     }
 
     for (let i = 0; i < resultingEvents.length; i++) {
@@ -87,10 +92,19 @@ class TurnCycle {
     console.log({ winner: winner });
     if (winner) {
       // End battle
+      let endingMessage;
+
+      if (winner === "player") {
+        endingMessage = "You have defeated your enemy!";
+      } else {
+        endingMessage = "You have been defeated!";
+      }
+
       await this.onNewEvent({
         type: "textMessage",
-        text: "You have defeated you enemy!",
+        text: endingMessage,
       });
+      this.onWinner(winner);
       return;
     }
 
@@ -135,13 +149,13 @@ class TurnCycle {
   }
 
   async init() {
-    // // console.log(this);
-    // await this.onNewEvent({
-    //   type: "textMessage",
-    //   text: `${
-    //     this.battle.combatants[this.battle.activeCombatants.enemy].name
-    //   } is getting ready to attack!`,
-    // });
+    // console.log(this);
+    await this.onNewEvent({
+      type: "textMessage",
+      text: `${
+        this.battle.combatants[this.battle.activeCombatants.enemy].name
+      } is getting ready to attack!`,
+    });
 
     // start first turn
     this.turn();

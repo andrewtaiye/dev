@@ -62,7 +62,18 @@ class Battle {
       this.addCombatant("e_" + key, "enemy", this.enemy.fighters[key]);
     });
 
+    // start empty
     this.items = [];
+
+    // add in player items
+    window.playerState.items.forEach((item) => {
+      this.items.push({
+        ...item,
+        team: "player",
+      });
+    });
+
+    this.usedInstanceIds = {};
   }
 
   addCombatant(id, team, config) {
@@ -110,6 +121,29 @@ class Battle {
           const battleEvent = new BattleEvent(event, this);
           battleEvent.init(resolve);
         });
+      },
+      onWinner: (winner) => {
+        if (winner === "player") {
+          const playerState = window.playerState;
+          Object.keys(playerState.fighters).forEach((id) => {
+            const playerStateFighter = playerState.fighters[id];
+            const combatant = this.combatants[id];
+            if (combatant) {
+              playerStateFighter.hp = combatant.hp;
+              playerStateFighter.xp = combatant.xp;
+              playerStateFighter.maxXp = combatant.maxXp;
+              playerStateFighter.level = combatant.level;
+            }
+          });
+
+          // get rid of player used items
+          playerState.items = playerState.items.filter((item) => {
+            return !this.usedInstanceIds[item.instanceId];
+          });
+        }
+
+        this.element.remove();
+        this.onComplete();
       },
     });
 

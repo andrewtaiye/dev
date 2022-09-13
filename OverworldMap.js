@@ -204,7 +204,7 @@ window.OverworldMaps = {
                 type: "textMessage",
                 text: "I'm busy can't you see?",
               },
-              { type: "battle" },
+              { type: "battle", enemyId: "greenSlime" },
             ],
             // eventCompleted: false,
           },
@@ -222,6 +222,10 @@ window.OverworldMaps = {
               {
                 type: "textMessage",
                 text: "Rawr! I'm a baby dragon!",
+              },
+              {
+                type: "battle",
+                enemyId: "babyBronzeDragon",
               },
             ],
             // eventCompleted: false,

@@ -75,9 +75,9 @@ class World {
 
     this.startGameLoop();
 
-    this.map.startCutscene([
-      // { type: "textMessage", text: "Where the hell am I..." },
-      { type: "battle", enemyId: "babyBronzeDragon" },
-    ]);
+    // this.map.startCutscene([
+    //   // { type: "textMessage", text: "Where the hell am I..." },
+    //   { type: "battle", enemyId: "babyBronzeDragon" },
+    // ]);
   }
 }
