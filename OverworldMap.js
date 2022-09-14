@@ -131,8 +131,10 @@ window.OverworldMaps = {
     configObjects: {
       hero: {
         type: "Person",
-        x: utility.withGrid(10),
-        y: utility.withGrid(9),
+        x: utility.withGrid(19),
+        y: utility.withGrid(51),
+        // x: utility.withGrid(10),
+        // y: utility.withGrid(9),
         useShadow: true,
         isPlayerControlled: true,
       },
@@ -140,6 +142,34 @@ window.OverworldMaps = {
         type: "Person",
         x: utility.withGrid(12),
         y: utility.withGrid(9),
+        src: " ",
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "This well's water looks funny...",
+              },
+              {
+                type: "textMessage",
+                text: "Let's try drinking some water anyway.",
+              },
+              {
+                type: "heal",
+              },
+              {
+                type: "textMessage",
+                text: "Dang! This some good water! I feel good as new!",
+              },
+            ],
+            // eventCompleted: false,
+          },
+        ],
+      },
+      healingWell2: {
+        type: "Person",
+        x: utility.withGrid(19),
+        y: utility.withGrid(51),
         src: " ",
         talking: [
           {
@@ -227,6 +257,191 @@ window.OverworldMaps = {
           },
         ],
       },
+      npc3: {
+        type: "Person",
+        x: utility.withGrid(6),
+        y: utility.withGrid(30),
+        src: "assets/characters/people/npc3.png",
+        useShadow: true,
+        behaviorLoop: [
+          { type: "stand", direction: "down", time: 800 },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "stand", direction: "right", time: 800 },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "right" },
+          { type: "stand", direction: "down", time: 800 },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "right" },
+          { type: "stand", direction: "down", time: 800 },
+          { type: "walk", direction: "left" },
+          { type: "stand", direction: "up", time: 800 },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "left" },
+          { type: "stand", direction: "down", time: 800 },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Wheat ain't gonna grow by itself.",
+                faceHero: "npc3",
+              },
+            ],
+          },
+        ],
+      },
+      npc4: {
+        type: "Person",
+        x: utility.withGrid(37),
+        y: utility.withGrid(31),
+        src: "assets/characters/people/npc4.png",
+        useShadow: true,
+        behaviorLoop: [{ type: "stand", direction: "up", time: 800 }],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "The people stoned me for looking funny...",
+                faceHero: "npc4",
+              },
+              { type: "textMessage", text: "That's why I moved out here." },
+              { type: "textMessage", text: "I just want to go home." },
+            ],
+          },
+        ],
+      },
+      npc5: {
+        type: "Person",
+        x: utility.withGrid(15),
+        y: utility.withGrid(48),
+        src: "assets/characters/people/npc5.png",
+        useShadow: true,
+        behaviorLoop: [
+          { type: "stand", direction: "up", time: 1600 },
+          { type: "walk", direction: "right" },
+          { type: "stand", direction: "up", time: 1600 },
+          { type: "stand", direction: "right", time: 1200 },
+          { type: "stand", direction: "down", time: 700 },
+          { type: "walk", direction: "left" },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "The people stoned me for looking funny...",
+                faceHero: "npc5",
+              },
+              { type: "textMessage", text: "That's why I moved out here." },
+              { type: "textMessage", text: "I just want to go home." },
+            ],
+          },
+        ],
+      },
+      npc6: {
+        type: "Person",
+        x: utility.withGrid(18),
+        y: utility.withGrid(58),
+        src: "assets/characters/people/npc6.png",
+        useShadow: true,
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 2000 },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "stand", direction: "left", time: 1600 },
+          { type: "walk", direction: "up" },
+          { type: "stand", direction: "left", time: 1200 },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "right" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "stand", direction: "right", time: 1200 },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "stand", direction: "right", time: 1600 },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "stand", direction: "left", time: 1000 },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "up" },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "left" },
+          { type: "stand", direction: "down", time: 2000 },
+          { type: "walk", direction: "left" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+          { type: "walk", direction: "down" },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Out of my way! Out of my way!",
+                faceHero: "npc6",
+              },
+            ],
+          },
+        ],
+      },
+      npc7: {
+        type: "Person",
+        x: utility.withGrid(13),
+        y: utility.withGrid(53),
+        src: "assets/characters/people/npc7.png",
+        useShadow: true,
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 2000 },
+          { type: "stand", direction: "up", time: 1600 },
+          { type: "stand", direction: "right", time: 1000 },
+          { type: "stand", direction: "down", time: 2000 },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Smell the flowers, feel the breeze!",
+                faceHero: "npc7",
+              },
+            ],
+          },
+        ],
+      },
+      npc8: {
+        type: "Person",
+        x: utility.withGrid(28),
+        y: utility.withGrid(51),
+        src: "assets/characters/people/npc8.png",
+        useShadow: true,
+        behaviorLoop: [{ type: "stand", direction: "right", time: 2000 }],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Not a single bite...",
+                faceHero: "npc8",
+              },
+              {
+                type: "textMessage",
+                text: "Guess I'll starve tonight.",
+              },
+            ],
+          },
+        ],
+      },
       slime001: {
         type: "Person",
         isMonster: true,
@@ -254,6 +469,26 @@ window.OverworldMaps = {
                 type: "battle",
                 enemyId: "greenSlime",
                 overworldId: "slime001",
+              },
+            ],
+            // eventCompleted: false,
+          },
+        ],
+      },
+      slime002: {
+        type: "Person",
+        isMonster: true,
+        x: utility.withGrid(22),
+        y: utility.withGrid(7),
+        src: "assets/characters/monsters/slime_green.png",
+        useShadow: true,
+        talking: [
+          {
+            events: [
+              {
+                type: "battle",
+                enemyId: "greenSlime",
+                overworldId: "slime002",
               },
             ],
             // eventCompleted: false,
