@@ -29,16 +29,12 @@ class BattleEvent {
       target.update({
         hp:
           target.hp -
-          Math.ceil(
-            (damage *
-              Math.max(
-                0,
-                100 +
-                  (caster.level - target.level) * 5 +
-                  caster.stats.attack * 5
-              )) /
-              100 -
-              target.stats.defence * 3
+          utility.damageFormula(
+            damage,
+            caster.level,
+            target.level,
+            caster.stats.attack,
+            target.stats.defence
           ),
       });
 

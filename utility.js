@@ -54,6 +54,21 @@ const utility = {
     return Math.floor(Math.random() * (max - min + 1) + min);
   },
 
+  damageFormula(damage, casterLevel, targetLevel, casterAttack, targetDefence) {
+    return Math.max(
+      0,
+      Math.ceil(
+        (damage *
+          Math.max(
+            0,
+            100 + (casterLevel - targetLevel) * 10 + casterAttack * 10
+          )) /
+          100 -
+          targetDefence * 3
+      )
+    );
+  },
+
   emitEvent(name, detail) {
     const event = new CustomEvent(name, {
       detail,

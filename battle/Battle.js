@@ -45,15 +45,12 @@ class Battle {
       );
       switch (true) {
         case generatedLevel <= newConfig.levelLimit.lower:
-          console.log(generatedLevel, newConfig.levelLimit.lower);
           newConfig.level = newConfig.levelLimit.lower;
           break;
         case generatedLevel >= newConfig.levelLimit.upper:
-          console.log(generatedLevel, newConfig.levelLimit.upper);
           newConfig.level = newConfig.levelLimit.upper;
           break;
         default:
-          console.log(generatedLevel);
           newConfig.level = generatedLevel;
       }
 
