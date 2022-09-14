@@ -38,4 +38,18 @@ window.Fighters = {
     icon: "./assets/icons/chill.png",
     actions: ["headbutt", "headbutt", "heal"],
   },
+  babyWhiteDragon: {
+    name: "Baby White Dragon",
+    type: FighterTypes.normal,
+    src: "./assets/characters/monsters/dragon_baby_white.png",
+    icon: "./assets/icons/chill.png",
+    actions: ["headbutt", "headbutt", "heal"],
+  },
+  adultRedDragon: {
+    name: "Adult Red Dragon",
+    type: FighterTypes.normal,
+    src: "./assets/characters/monsters/dragon_adult_red.png",
+    icon: "./assets/icons/chill.png",
+    actions: ["headbutt", "headbutt", "heal"],
+  },
 };

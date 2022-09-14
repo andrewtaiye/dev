@@ -119,4 +119,44 @@ window.Enemies = {
       },
     },
   },
+  babyWhiteDragon: {
+    name: "Baby white Dragon",
+    fighters: {
+      babyWhiteDragon: {
+        fighterId: "babyWhiteDragon",
+        generateStats: true,
+        levelSpread: {
+          lower: 0,
+          upper: 10,
+        },
+        maxHp: 100,
+        level: 20,
+        stats: {
+          attack: 35,
+          defence: 15,
+          speed: 10,
+        },
+      },
+    },
+  },
+  adultRedDragon: {
+    name: "Adult Red Dragon",
+    fighters: {
+      adultRedDragon: {
+        fighterId: "adultRedDragon",
+        generateStats: true,
+        levelSpread: {
+          lower: 0,
+          upper: 10,
+        },
+        maxHp: 100,
+        level: 20,
+        stats: {
+          attack: 35,
+          defence: 15,
+          speed: 10,
+        },
+      },
+    },
+  },
 };
