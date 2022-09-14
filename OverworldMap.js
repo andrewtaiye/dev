@@ -131,8 +131,8 @@ window.OverworldMaps = {
     configObjects: {
       hero: {
         type: "Person",
-        x: utility.withGrid(10),
-        y: utility.withGrid(9),
+        x: utility.withGrid(9),
+        y: utility.withGrid(16),
         useShadow: true,
         isPlayerControlled: true,
       },

@@ -31,7 +31,7 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 1,
           upper: 8,
         },
@@ -55,7 +55,7 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 4,
           upper: 12,
         },
@@ -79,7 +79,7 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 6,
           upper: 15,
         },
@@ -103,7 +103,7 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 8,
           upper: 17,
         },
@@ -127,7 +127,7 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 10,
           upper: 20,
         },
@@ -151,14 +151,14 @@ window.Enemies = {
         },
         maxHp: 100,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 12,
           upper: 30,
         },
         stats: {
-          attack: 35,
-          defence: 15,
-          speed: 10,
+          attack: null,
+          defence: null,
+          speed: null,
         },
       },
     },
@@ -175,14 +175,14 @@ window.Enemies = {
         },
         maxHp: 100,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 13,
           upper: 30,
         },
         stats: {
-          attack: 35,
-          defence: 15,
-          speed: 10,
+          attack: null,
+          defence: null,
+          speed: null,
         },
       },
     },
@@ -199,14 +199,14 @@ window.Enemies = {
         },
         maxHp: 100,
         level: null,
-        levelLimits: {
+        levelLimit: {
           lower: 20,
           upper: 45,
         },
         stats: {
-          attack: 35,
-          defence: 15,
-          speed: 10,
+          attack: null,
+          defence: null,
+          speed: null,
         },
       },
     },

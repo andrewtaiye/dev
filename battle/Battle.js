@@ -39,15 +39,26 @@ class Battle {
     const newConfig = JSON.parse(JSON.stringify(config));
     if (team === "enemy" && newConfig.generateStats) {
       // Generate Level
-      newConfig.level = utility.randomFromInterval(
-        Math.max(1, this.combatants.player.level - newConfig.levelSpread.lower),
+      const generatedLevel = utility.randomFromInterval(
+        this.combatants.player.level - newConfig.levelSpread.lower,
         this.combatants.player.level + newConfig.levelSpread.upper
       );
+      switch (true) {
+        case generatedLevel <= newConfig.levelLimit.lower:
+          console.log(generatedLevel, newConfig.levelLimit.lower);
+          newConfig.level = newConfig.levelLimit.lower;
+          break;
+        case generatedLevel >= newConfig.levelLimit.upper:
+          console.log(generatedLevel, newConfig.levelLimit.upper);
+          newConfig.level = newConfig.levelLimit.upper;
+          break;
+        default:
+          console.log(generatedLevel);
+          newConfig.level = generatedLevel;
+      }
 
       // Generate Max HP
-      console.log(newConfig);
       newConfig.maxHp += newConfig.level * 5;
-      console.log(newConfig);
 
       // Generate Atk, Def and Spd
       newConfig.stats.attack = utility.randomFromInterval(

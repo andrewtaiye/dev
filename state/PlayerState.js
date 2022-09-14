@@ -7,7 +7,7 @@ class PlayerState {
         maxHp: 100,
         xp: 95,
         maxXp: 100,
-        level: 1,
+        level: 4,
         status: null,
         isPlayerControlled: true,
         stats: {
