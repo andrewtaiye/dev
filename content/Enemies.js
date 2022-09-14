@@ -31,6 +31,10 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
+        levelLimits: {
+          lower: 1,
+          upper: 8,
+        },
         stats: {
           attack: null,
           defence: null,
@@ -51,6 +55,10 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
+        levelLimits: {
+          lower: 4,
+          upper: 12,
+        },
         stats: {
           attack: null,
           defence: null,
@@ -71,6 +79,10 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
+        levelLimits: {
+          lower: 6,
+          upper: 15,
+        },
         stats: {
           attack: null,
           defence: null,
@@ -91,6 +103,10 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
+        levelLimits: {
+          lower: 8,
+          upper: 17,
+        },
         stats: {
           attack: null,
           defence: null,
@@ -111,6 +127,10 @@ window.Enemies = {
         },
         maxHp: 20,
         level: null,
+        levelLimits: {
+          lower: 10,
+          upper: 20,
+        },
         stats: {
           attack: null,
           defence: null,
@@ -130,7 +150,11 @@ window.Enemies = {
           upper: 10,
         },
         maxHp: 100,
-        level: 20,
+        level: null,
+        levelLimits: {
+          lower: 12,
+          upper: 30,
+        },
         stats: {
           attack: 35,
           defence: 15,
@@ -150,7 +174,11 @@ window.Enemies = {
           upper: 10,
         },
         maxHp: 100,
-        level: 20,
+        level: null,
+        levelLimits: {
+          lower: 13,
+          upper: 30,
+        },
         stats: {
           attack: 35,
           defence: 15,
@@ -166,11 +194,15 @@ window.Enemies = {
         fighterId: "adultRedDragon",
         generateStats: true,
         levelSpread: {
-          lower: 0,
+          lower: -2,
           upper: 10,
         },
         maxHp: 100,
-        level: 20,
+        level: null,
+        levelLimits: {
+          lower: 20,
+          upper: 45,
+        },
         stats: {
           attack: 35,
           defence: 15,

@@ -44,6 +44,11 @@ class Battle {
         this.combatants.player.level + newConfig.levelSpread.upper
       );
 
+      // Generate Max HP
+      console.log(newConfig);
+      newConfig.maxHp += newConfig.level * 5;
+      console.log(newConfig);
+
       // Generate Atk, Def and Spd
       newConfig.stats.attack = utility.randomFromInterval(
         newConfig.level * 0.8,
