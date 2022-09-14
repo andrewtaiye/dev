@@ -3,13 +3,14 @@ class GameObject {
     this.id = null;
     this.isMounted = false;
     this.isAlive = config.isAlive || false;
-    this.map = map;
+    this.useShadow = config.useShadow;
 
     this.x = config.x || 0; // x position data. to be passed through when GameObject is created, defaults to 0
     this.y = config.y || 0; // y position data. to be passed through when GameObject is created, defaults to 0
     this.direction = config.direction || "down";
 
     this.sprite = new Sprite({
+      useShadow: this.useShadow,
       gameObject: this,
       src: config.src || "assets/characters/people/hero.png",
     });

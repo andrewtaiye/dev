@@ -56,6 +56,7 @@ class OverworldMap {
     Object.keys(this.configObjects).forEach((key) => {
       let object = this.configObjects[key];
       object.id = key;
+      console.log(object);
 
       let instance;
       if (object.type === "Person") {
@@ -133,37 +134,59 @@ window.OverworldMaps = {
         type: "Person",
         x: utility.withGrid(10),
         y: utility.withGrid(9),
+        useShadow: true,
         isPlayerControlled: true,
       },
-      npc1: {
+      healingWell: {
         type: "Person",
-        x: utility.withGrid(17),
+        x: utility.withGrid(12),
         y: utility.withGrid(9),
-        src: "assets/characters/people/npc1.png",
-        // behaviorLoop: [
-        //   { type: "walk", direction: "down" },
-        //   { type: "stand", direction: "left", time: 1200 },
-        //   { type: "walk", direction: "up" },
-        //   { type: "stand", direction: "down", time: 1500 },
-        // ],
+        src: " ",
         talking: [
           {
             events: [
               {
                 type: "textMessage",
-                text: "You look like you've been through hell.",
-                faceHero: "npc1",
+                text: "This well's water looks funny...",
               },
               {
                 type: "textMessage",
-                text: "Here, eat this grain of rice.",
+                text: "Let's try drinking some water anyway.",
               },
               {
                 type: "heal",
               },
               {
                 type: "textMessage",
-                text: "Good as new!",
+                text: "Dang! This some good water! I feel good as new!",
+              },
+            ],
+            // eventCompleted: false,
+          },
+        ],
+      },
+      npc1: {
+        type: "Person",
+        x: utility.withGrid(17),
+        y: utility.withGrid(9),
+        src: "assets/characters/people/npc1.png",
+        useShadow: true,
+        behaviorLoop: [
+          { type: "stand", direction: "left", time: 1200 },
+          { type: "stand", direction: "up", time: 1500 },
+          { type: "stand", direction: "down", time: 1500 },
+        ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Who the hell are you?",
+                faceHero: "npc1",
+              },
+              {
+                type: "textMessage",
+                text: "Which hole did you crawl out from?",
               },
             ],
             // eventCompleted: false,
@@ -175,6 +198,7 @@ window.OverworldMaps = {
         x: utility.withGrid(12),
         y: utility.withGrid(8),
         src: "assets/characters/people/npc2.png",
+        useShadow: true,
         behaviorLoop: [
           { type: "walk", direction: "left" },
           { type: "stand", direction: "down", time: 800 },
@@ -210,6 +234,7 @@ window.OverworldMaps = {
         x: utility.withGrid(16),
         y: utility.withGrid(4),
         src: "assets/characters/monsters/slime_green.png",
+        useShadow: true,
         talking: [
           {
             events: [
@@ -233,6 +258,7 @@ window.OverworldMaps = {
         x: utility.withGrid(16),
         y: utility.withGrid(6),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
+        useShadow: true,
         talking: [
           {
             events: [

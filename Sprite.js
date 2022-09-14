@@ -9,7 +9,7 @@ class Sprite {
 
     //Set up the shadow
     this.shadow = new Image();
-    this.useShadow = true;
+    this.useShadow = config.useShadow;
     if (this.useShadow) {
       this.shadow.src = "assets/characters/shadow.png";
     }
