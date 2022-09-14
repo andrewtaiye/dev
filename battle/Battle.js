@@ -82,8 +82,8 @@ class Battle {
         });
       },
       onWinner: (winner) => {
+        const playerState = window.playerState;
         if (winner === "player") {
-          const playerState = window.playerState;
           Object.keys(playerState.fighters).forEach((id) => {
             const playerStateFighter = playerState.fighters[id];
             const combatant = this.combatants[id];
@@ -98,12 +98,26 @@ class Battle {
 
           this.map.gameObjects[this.overworldId].isAlive = false;
           this.map.gameObjects[this.overworldId].respawnTimer = 100;
+        }
 
-          // get rid of player used items
-          playerState.items = playerState.items.filter((item) => {
-            return !this.usedInstanceIds[item.instanceId];
+        if (winner === "enemy") {
+          Object.keys(playerState.fighters).forEach((id) => {
+            const playerStateFighter = playerState.fighters[id];
+            const combatant = this.combatants[id];
+            if (combatant) {
+              playerStateFighter.hp = 1;
+              playerStateFighter.xp = combatant.xp;
+              playerStateFighter.maxXp = combatant.maxXp;
+              playerStateFighter.level = combatant.level;
+              playerStateFighter.status = null;
+            }
           });
         }
+
+        // get rid of player used items
+        playerState.items = playerState.items.filter((item) => {
+          return !this.usedInstanceIds[item.instanceId];
+        });
 
         this.element.remove();
         this.onComplete();

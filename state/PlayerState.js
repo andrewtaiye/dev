@@ -3,7 +3,7 @@ class PlayerState {
     this.fighters = {
       player: {
         fighterId: "hero",
-        hp: 50,
+        hp: 10,
         maxHp: 50,
         xp: 95,
         maxXp: 100,
