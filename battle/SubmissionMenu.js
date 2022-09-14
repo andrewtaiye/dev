@@ -103,7 +103,9 @@ class SubmissionMenu {
   }
 
   decide() {
-    this.menuSubmit(window.Actions[this.caster.actions[0]]);
+    this.menuSubmit(
+      window.Actions[utility.randomFromArray(this.caster.actions)]
+    ); // this.caster comes from battle.combatants
   }
 
   showMenu(container) {
