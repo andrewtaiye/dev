@@ -131,10 +131,8 @@ window.OverworldMaps = {
     configObjects: {
       hero: {
         type: "Person",
-        x: utility.withGrid(11),
-        y: utility.withGrid(22),
-        // x: utility.withGrid(10),
-        // y: utility.withGrid(9),
+        x: utility.withGrid(10),
+        y: utility.withGrid(9),
         useShadow: true,
         isPlayerControlled: true,
       },
@@ -445,8 +443,9 @@ window.OverworldMaps = {
       slime001: {
         type: "Person",
         isMonster: true,
-        x: utility.withGrid(16),
-        y: utility.withGrid(4),
+        willRespawn: true,
+        x: utility.withGrid(17),
+        y: utility.withGrid(15),
         src: "assets/characters/monsters/slime_green.png",
         useShadow: true,
         // behaviorLoop: [
@@ -478,6 +477,7 @@ window.OverworldMaps = {
       slime002: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(22),
         y: utility.withGrid(7),
         src: "assets/characters/monsters/slime_green.png",
@@ -518,6 +518,7 @@ window.OverworldMaps = {
       slime003: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(28),
         y: utility.withGrid(6),
         src: "assets/characters/monsters/slime_blue.png",
@@ -560,6 +561,7 @@ window.OverworldMaps = {
       slime004: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(27),
         y: utility.withGrid(8),
         src: "assets/characters/monsters/slime_blue.png",
@@ -586,6 +588,7 @@ window.OverworldMaps = {
       slime005: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(28),
         y: utility.withGrid(9),
         src: "assets/characters/monsters/slime_green.png",
@@ -615,6 +618,7 @@ window.OverworldMaps = {
       slime006: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(30),
         y: utility.withGrid(9),
         src: "assets/characters/monsters/slime_green.png",
@@ -646,6 +650,7 @@ window.OverworldMaps = {
       slime007: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(21),
         y: utility.withGrid(11),
         src: "assets/characters/monsters/slime_green.png",
@@ -672,6 +677,7 @@ window.OverworldMaps = {
       slime008: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(18),
         y: utility.withGrid(14),
         src: "assets/characters/monsters/slime_blue.png",
@@ -693,6 +699,7 @@ window.OverworldMaps = {
       slime009: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(19),
         y: utility.withGrid(16),
         src: "assets/characters/monsters/slime_blue.png",
@@ -727,6 +734,7 @@ window.OverworldMaps = {
       slime010: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(25),
         y: utility.withGrid(14),
         src: "assets/characters/monsters/slime_green.png",
@@ -761,6 +769,7 @@ window.OverworldMaps = {
       slime011: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(30),
         y: utility.withGrid(13),
         src: "assets/characters/monsters/slime_green.png",
@@ -788,6 +797,7 @@ window.OverworldMaps = {
       slime012: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(24),
         y: utility.withGrid(17),
         src: "assets/characters/monsters/slime_green.png",
@@ -818,6 +828,7 @@ window.OverworldMaps = {
       slime013: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(25),
         y: utility.withGrid(20),
         src: "assets/characters/monsters/slime_green.png",
@@ -843,6 +854,7 @@ window.OverworldMaps = {
       slime014: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(24),
         y: utility.withGrid(21),
         src: "assets/characters/monsters/slime_green.png",
@@ -868,6 +880,7 @@ window.OverworldMaps = {
       slime015: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(19),
         y: utility.withGrid(22),
         src: "assets/characters/monsters/slime_green.png",
@@ -895,6 +908,7 @@ window.OverworldMaps = {
       slime016: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(29),
         y: utility.withGrid(23),
         src: "assets/characters/monsters/slime_red.png",
@@ -916,6 +930,7 @@ window.OverworldMaps = {
       slime017: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(30),
         y: utility.withGrid(22),
         src: "assets/characters/monsters/slime_red.png",
@@ -937,6 +952,7 @@ window.OverworldMaps = {
       slime018: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(32),
         y: utility.withGrid(22),
         src: "assets/characters/monsters/slime_red.png",
@@ -958,6 +974,7 @@ window.OverworldMaps = {
       slime019: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(18),
         y: utility.withGrid(26),
         src: "assets/characters/monsters/slime_green.png",
@@ -1018,6 +1035,7 @@ window.OverworldMaps = {
       slime020: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(22),
         y: utility.withGrid(27),
         src: "assets/characters/monsters/slime_green.png",
@@ -1078,6 +1096,7 @@ window.OverworldMaps = {
       slime021: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(25),
         y: utility.withGrid(23),
         src: "assets/characters/monsters/slime_green.png",
@@ -1138,6 +1157,7 @@ window.OverworldMaps = {
       slime022: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(13),
         y: utility.withGrid(29),
         src: "assets/characters/monsters/slime_green.png",
@@ -1165,6 +1185,7 @@ window.OverworldMaps = {
       slime023: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(11),
         y: utility.withGrid(36),
         src: "assets/characters/monsters/slime_green.png",
@@ -1193,6 +1214,7 @@ window.OverworldMaps = {
       slime024: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(16),
         y: utility.withGrid(36),
         src: "assets/characters/monsters/slime_green.png",
@@ -1219,6 +1241,7 @@ window.OverworldMaps = {
       slime025: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(16),
         y: utility.withGrid(33),
         src: "assets/characters/monsters/slime_green.png",
@@ -1249,6 +1272,7 @@ window.OverworldMaps = {
       slime026: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(21),
         y: utility.withGrid(36),
         src: "assets/characters/monsters/slime_green.png",
@@ -1279,6 +1303,7 @@ window.OverworldMaps = {
       slime027: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(23),
         y: utility.withGrid(33),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1305,6 +1330,7 @@ window.OverworldMaps = {
       slime028: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(27),
         y: utility.withGrid(35),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1338,6 +1364,7 @@ window.OverworldMaps = {
       slime029: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(29),
         y: utility.withGrid(34),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1378,6 +1405,7 @@ window.OverworldMaps = {
       slime030: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(19),
         y: utility.withGrid(38),
         src: "assets/characters/monsters/slime_green.png",
@@ -1405,6 +1433,7 @@ window.OverworldMaps = {
       slime031: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(24),
         y: utility.withGrid(38),
         src: "assets/characters/monsters/slime_green.png",
@@ -1438,6 +1467,7 @@ window.OverworldMaps = {
       slime032: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(31),
         y: utility.withGrid(36),
         src: "assets/characters/monsters/slime_green.png",
@@ -1464,6 +1494,7 @@ window.OverworldMaps = {
       slime033: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(27),
         y: utility.withGrid(37),
         src: "assets/characters/monsters/slime_green.png",
@@ -1490,6 +1521,7 @@ window.OverworldMaps = {
       slime034: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(29),
         y: utility.withGrid(39),
         src: "assets/characters/monsters/slime_green.png",
@@ -1518,6 +1550,7 @@ window.OverworldMaps = {
       slime035: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(37),
         y: utility.withGrid(37),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1544,6 +1577,7 @@ window.OverworldMaps = {
       slime036: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(34),
         y: utility.withGrid(36),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1572,6 +1606,7 @@ window.OverworldMaps = {
       slime037: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(35),
         y: utility.withGrid(39),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1593,6 +1628,7 @@ window.OverworldMaps = {
       slime038: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(34),
         y: utility.withGrid(40),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1614,6 +1650,7 @@ window.OverworldMaps = {
       slime039: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(32),
         y: utility.withGrid(45),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1655,6 +1692,7 @@ window.OverworldMaps = {
       slime040: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(31),
         y: utility.withGrid(48),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1685,6 +1723,7 @@ window.OverworldMaps = {
       slime041: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(30),
         y: utility.withGrid(45),
         src: "assets/characters/monsters/slime_red.png",
@@ -1725,6 +1764,7 @@ window.OverworldMaps = {
       slime042: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(24),
         y: utility.withGrid(42),
         src: "assets/characters/monsters/slime_red.png",
@@ -1749,6 +1789,7 @@ window.OverworldMaps = {
       slime043: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(10),
         y: utility.withGrid(40),
         src: "assets/characters/monsters/slime_blue.png",
@@ -1786,6 +1827,7 @@ window.OverworldMaps = {
       slime044: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(11),
         y: utility.withGrid(44),
         src: "assets/characters/monsters/slime_red.png",
@@ -1810,6 +1852,7 @@ window.OverworldMaps = {
       slime045: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(13),
         y: utility.withGrid(45),
         src: "assets/characters/monsters/slime_red.png",
@@ -1836,6 +1879,7 @@ window.OverworldMaps = {
       slime046: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(10),
         y: utility.withGrid(47),
         src: "assets/characters/monsters/slime_red.png",
@@ -1860,6 +1904,7 @@ window.OverworldMaps = {
       dragon001: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(32),
         y: utility.withGrid(12),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
@@ -2006,6 +2051,7 @@ window.OverworldMaps = {
       dragon002: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(22),
         y: utility.withGrid(37),
         src: "assets/characters/monsters/dragon_baby_white.png",
@@ -2034,6 +2080,7 @@ window.OverworldMaps = {
       dragon003: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(15),
         y: utility.withGrid(18),
         src: "assets/characters/monsters/dragon_baby_white.png",
@@ -2065,6 +2112,7 @@ window.OverworldMaps = {
       dragon004: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(14),
         y: utility.withGrid(22),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
@@ -2093,6 +2141,7 @@ window.OverworldMaps = {
       dragon005: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(15),
         y: utility.withGrid(22),
         src: "assets/characters/monsters/dragon_baby_white.png",
@@ -2121,6 +2170,7 @@ window.OverworldMaps = {
       dragon006: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(15),
         y: utility.withGrid(23),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
@@ -2149,6 +2199,7 @@ window.OverworldMaps = {
       dragon007: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(14),
         y: utility.withGrid(26),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
@@ -2182,6 +2233,7 @@ window.OverworldMaps = {
       dragon008: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(6),
         y: utility.withGrid(23),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
@@ -2229,6 +2281,7 @@ window.OverworldMaps = {
       dragon009: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(9),
         y: utility.withGrid(25),
         src: "assets/characters/monsters/dragon_baby_white.png",
@@ -2279,6 +2332,7 @@ window.OverworldMaps = {
       dragon010: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(13),
         y: utility.withGrid(19),
         src: "assets/characters/monsters/dragon_baby_white.png",
@@ -2321,6 +2375,7 @@ window.OverworldMaps = {
       dragon011: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(7),
         y: utility.withGrid(22),
         src: "assets/characters/monsters/dragon_baby_bronze.png",
@@ -2361,6 +2416,7 @@ window.OverworldMaps = {
       dragon012: {
         type: "Person",
         isMonster: true,
+        willRespawn: true,
         x: utility.withGrid(9),
         y: utility.withGrid(17),
         src: "assets/characters/monsters/dragon_adult_red.png",
