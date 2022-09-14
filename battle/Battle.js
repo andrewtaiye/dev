@@ -36,10 +36,27 @@ class Battle {
   }
 
   addCombatant(id, team, config) {
+    const newConfig = JSON.parse(JSON.stringify(config));
+
+    if (team === "enemy" && newConfig.generateStats) {
+      newConfig.stats.attack = utility.randomFromInterval(
+        newConfig.level * 0.8,
+        newConfig.level * 1.2
+      );
+      newConfig.stats.defence = utility.randomFromInterval(
+        newConfig.level * 0.8,
+        newConfig.level * 1.2
+      );
+      newConfig.stats.speed = utility.randomFromInterval(
+        newConfig.level * 0.8,
+        newConfig.level * 1.2
+      );
+    }
+
     this.combatants[id] = new Combatant(
       {
         ...window.Fighters[config.fighterId],
-        ...config,
+        ...newConfig,
         team,
         isPlayerControlled: team === "player",
       },

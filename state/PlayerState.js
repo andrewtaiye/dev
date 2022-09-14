@@ -3,13 +3,24 @@ class PlayerState {
     this.fighters = {
       player: {
         fighterId: "hero",
-        hp: 10,
-        maxHp: 50,
+        hp: 100,
+        maxHp: 100,
         xp: 95,
         maxXp: 100,
-        level: 1,
+        level: 10,
         status: null,
         isPlayerControlled: true,
+        stats: {
+          attack: 1,
+          attackXp: 95,
+          attackMaxXp: 100,
+          defence: 1,
+          defenceXp: 0,
+          defenceMaxXp: 100,
+          speed: 1,
+          speedXp: 0,
+          speedMaxXp: 100,
+        },
       },
     };
     this.lineUp = ["player"];

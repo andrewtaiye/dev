@@ -234,6 +234,15 @@ window.OverworldMaps = {
         y: utility.withGrid(4),
         src: "assets/characters/monsters/slime_green.png",
         useShadow: true,
+        // behaviorLoop: [
+        //   { type: "walk", direction: "up" },
+        //   { type: "walk", direction: "left" },
+        //   { type: "stand", direction: "left", time: 1000 },
+        //   { type: "walk", direction: "right" },
+        //   { type: "walk", direction: "right" },
+        //   { type: "stand", direction: "right", time: 1000 },
+        //   { type: "walk", direction: "left" },
+        // ],
         talking: [
           {
             events: [
@@ -278,25 +287,25 @@ window.OverworldMaps = {
     },
     cutsceneSpaces: {
       // Spaces to trigger interactions with NPCs
-      [utility.asGridCoord(18, 11)]: [
-        {
-          events: [
-            { who: "npc1", type: "walk", direction: "down" },
-            { who: "npc1", type: "walk", direction: "down" },
-            { who: "npc1", type: "stand", direction: "right" },
-            { who: "hero", type: "stand", direction: "left" },
-            {
-              type: "textMessage",
-              text: "Hey! You can't go out there like that!",
-            },
-            { who: "npc1", type: "walk", direction: "up" },
-            { who: "npc1", type: "walk", direction: "up" },
-            { who: "npc1", type: "stand", direction: "down" },
-            { who: "hero", type: "walk", direction: "left" },
-            { who: "hero", type: "stand", direction: "up" },
-          ],
-        },
-      ],
+      // [utility.asGridCoord(18, 11)]: [
+      //   {
+      //     events: [
+      //       { who: "npc1", type: "walk", direction: "down" },
+      //       { who: "npc1", type: "walk", direction: "down" },
+      //       { who: "npc1", type: "stand", direction: "right" },
+      //       { who: "hero", type: "stand", direction: "left" },
+      //       {
+      //         type: "textMessage",
+      //         text: "Hey! You can't go out there like that!",
+      //       },
+      //       { who: "npc1", type: "walk", direction: "up" },
+      //       { who: "npc1", type: "walk", direction: "up" },
+      //       { who: "npc1", type: "stand", direction: "down" },
+      //       { who: "hero", type: "walk", direction: "left" },
+      //       { who: "hero", type: "stand", direction: "up" },
+      //     ],
+      //   },
+      // ],
       // Spaces to trigger map changes (currently not used)
       // [utility.asGridCoord(18, 4)]: [
       //   {

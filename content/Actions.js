@@ -7,7 +7,7 @@ window.Actions = {
       { type: "animation", animation: "spin" },
       {
         type: "stateChange",
-        damage: 15,
+        damage: 10,
         status: {
           type: "dizzy",
           category: "Dizzy",

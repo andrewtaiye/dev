@@ -50,6 +50,10 @@ const utility = {
     return array[Math.floor(Math.random() * array.length)];
   },
 
+  randomFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  },
+
   emitEvent(name, detail) {
     const event = new CustomEvent(name, {
       detail,

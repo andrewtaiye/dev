@@ -26,10 +26,31 @@ class BattleEvent {
 
     if (damage) {
       // modify target to have less HP
+      console.log(this);
       target.update({
-        hp: target.hp - damage,
+        hp:
+          target.hp -
+          Math.ceil(
+            (damage *
+              Math.max(
+                0,
+                100 +
+                  (caster.level - target.level) * 5 +
+                  caster.stats.attack * 5
+              )) /
+              100 -
+              target.stats.defence * 3
+          ),
       });
 
+      if (caster.isPlayerControlled) {
+        caster.stats.attackXp += 1;
+        if (caster.stats.attackXp === caster.stats.attackMaxXp) {
+          caster.stats.attack += 1;
+          caster.stats.attackXp = 0;
+          caster.stats.attackMaxXp = caster.stats.attack * 100;
+        }
+      }
       // start blinking
       target.spriteElement.classList.add("battle-damage-blink");
     }
