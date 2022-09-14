@@ -42,12 +42,23 @@ class BattleEvent {
           ),
       });
 
+      // increases atk exp if caster is player controlled
       if (caster.isPlayerControlled) {
         caster.stats.attackXp += 1;
         if (caster.stats.attackXp === caster.stats.attackMaxXp) {
           caster.stats.attack += 1;
           caster.stats.attackXp = 0;
           caster.stats.attackMaxXp = caster.stats.attack * 100;
+        }
+      }
+
+      // increases def exp if target is player controlled
+      if (target.isPlayerControlled) {
+        target.stats.defenceXp += 1;
+        if (target.stats.defenceXp === target.stats.defenceMaxXp) {
+          target.stats.defence += 1;
+          target.stats.defenceXp = 0;
+          target.stats.defenceMaxXp = target.stats.defence * 100;
         }
       }
       // start blinking
