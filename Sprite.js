@@ -19,11 +19,29 @@ class Sprite {
 
     // Configure Animation and Initial State
     this.animations = config.animations || {
-      idle: [
+      "monster-idle-down": [
         [0, 0],
         [1, 0],
         [2, 0],
         [3, 0],
+      ],
+      "monster-idle-right": [
+        [0, 1],
+        [1, 1],
+        [2, 1],
+        [3, 1],
+      ],
+      "monster-idle-up": [
+        [0, 2],
+        [1, 2],
+        [2, 2],
+        [3, 2],
+      ],
+      "monster-idle-left": [
+        [0, 3],
+        [1, 3],
+        [2, 3],
+        [3, 3],
       ],
       "idle-down": [[0, 0]],
       "idle-right": [[0, 1]],

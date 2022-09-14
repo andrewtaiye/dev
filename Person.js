@@ -123,7 +123,7 @@ class Person extends GameObject {
     }
     if (this.isMonster && !this.map.isCutscenePlaying) {
       // console.log(this);
-      this.sprite.setAnimation("idle");
+      this.sprite.setAnimation("monster-idle-" + this.direction);
       return;
     }
     this.sprite.setAnimation("idle-" + this.direction);
