@@ -26,7 +26,6 @@ class BattleEvent {
 
     if (damage) {
       // modify target to have less HP
-      console.log(this);
       target.update({
         hp:
           target.hp -
@@ -121,12 +120,11 @@ class BattleEvent {
       if (amount > 0) {
         amount -= 1;
         combatant.xp += 1;
-
         // check if level up is achieved
         if (combatant.xp === combatant.maxXp) {
           combatant.xp = 0;
-          combatant.maxXp = 100;
           combatant.level += 1;
+          combatant.maxXp = 100 * combatant.level;
         }
 
         combatant.update();

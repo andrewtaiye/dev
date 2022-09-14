@@ -6,7 +6,7 @@ window.Enemies = {
       greenSlime: {
         fighterId: "greenSlime",
         generateStats: true,
-        maxHp: 50,
+        maxHp: 10,
         level: 1,
         stats: {
           attack: 1,
@@ -23,8 +23,8 @@ window.Enemies = {
       babyBronzeDragon: {
         fighterId: "babyBronzeDragon",
         generateStats: true,
-        maxHp: 10,
         level: 20,
+        maxHp: 100,
         stats: {
           attack: 35,
           defence: 15,
