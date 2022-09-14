@@ -56,7 +56,6 @@ class OverworldMap {
     Object.keys(this.configObjects).forEach((key) => {
       let object = this.configObjects[key];
       object.id = key;
-      console.log(object);
 
       let instance;
       if (object.type === "Person") {
