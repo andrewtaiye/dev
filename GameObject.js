@@ -1,9 +1,11 @@
 class GameObject {
   constructor(config, map) {
     this.id = null;
+    this.config = config;
     this.isMounted = false;
     this.isAlive = config.isAlive || false;
     this.useShadow = config.useShadow;
+    this.map = map;
 
     this.x = config.x || 0; // x position data. to be passed through when GameObject is created, defaults to 0
     this.y = config.y || 0; // y position data. to be passed through when GameObject is created, defaults to 0

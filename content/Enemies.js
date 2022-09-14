@@ -1,4 +1,24 @@
 window.Enemies = {
+  trainingSlime: {
+    name: "Dorothy",
+    fighters: {
+      trainingSlime: {
+        fighterId: "trainingSlime",
+        generateStats: false,
+        levelSpread: {
+          lower: 0,
+          upper: 0,
+        },
+        maxHp: 10,
+        level: 1,
+        stats: {
+          attack: 0,
+          defence: 0,
+          speed: 0,
+        },
+      },
+    },
+  },
   greenSlime: {
     name: "Green Slime",
     fighters: {

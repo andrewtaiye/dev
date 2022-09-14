@@ -5,6 +5,7 @@ class Person extends GameObject {
     this.isStanding = false;
     this.intentPosition = null;
     this.map = map;
+    this.willRespawn = config.willRespawn;
 
     this.isPlayerControlled = config.isPlayerControlled || false;
     this.isMonster = config.isMonster || false;
@@ -22,7 +23,7 @@ class Person extends GameObject {
 
   update(state) {
     // the state argument is the object passed to the update function during the game loop
-    if (!this.isAlive && this.respawnTimer > 0) {
+    if (this.willRespawn && !this.isAlive && this.respawnTimer > 0) {
       this.respawnTimer -= 1;
       if (this.respawnTimer === 0) {
         this.isAlive = true;

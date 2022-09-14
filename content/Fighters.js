@@ -10,6 +10,13 @@ window.Fighters = {
     icon: "./assets/icons/chill.png",
     actions: ["tackle", "headbutt", "heal"],
   },
+  trainingSlime: {
+    name: "Dorothy",
+    type: FighterTypes.normal,
+    src: "./assets/characters/monsters/slime_green.png",
+    icon: "./assets/icons/chill.png",
+    actions: ["headbutt", "headbutt", "heal"],
+  },
   greenSlime: {
     name: "Green Slime",
     type: FighterTypes.normal,

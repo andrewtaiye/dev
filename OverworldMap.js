@@ -208,12 +208,16 @@ window.OverworldMaps = {
             events: [
               {
                 type: "textMessage",
-                text: "Who the hell are you?",
+                text: "Did you see Dorothy?",
                 faceHero: "npc1",
               },
               {
                 type: "textMessage",
-                text: "Which hole did you crawl out from?",
+                text: "She ran out the back just now...",
+              },
+              {
+                type: "textMessage",
+                text: "It's almost time for her meal too...",
               },
             ],
             // eventCompleted: false,
@@ -437,6 +441,40 @@ window.OverworldMaps = {
                 text: "Guess I'll starve tonight.",
               },
             ],
+          },
+        ],
+      },
+      trainingSlime: {
+        type: "Person",
+        isMonster: true,
+        willRespawn: false,
+        x: utility.withGrid(16),
+        y: utility.withGrid(4),
+        src: "assets/characters/monsters/slime_green.png",
+        useShadow: true,
+        // behaviorLoop: [
+        //   { type: "walk", direction: "up" },
+        //   { type: "walk", direction: "left" },
+        //   { type: "stand", direction: "left", time: 1000 },
+        //   { type: "walk", direction: "right" },
+        //   { type: "walk", direction: "right" },
+        //   { type: "stand", direction: "right", time: 1000 },
+        //   { type: "walk", direction: "left" },
+        // ],
+        talking: [
+          {
+            events: [
+              {
+                type: "textMessage",
+                text: "Eek! I'm domesticated! Don't hit me!",
+              },
+              {
+                type: "battle",
+                enemyId: "trainingSlime",
+                overworldId: "trainingSlime",
+              },
+            ],
+            // eventCompleted: false,
           },
         ],
       },
