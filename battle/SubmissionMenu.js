@@ -1,9 +1,10 @@
 class SubmissionMenu {
-  constructor({ caster, enemy, onComplete, items, replacements }) {
+  constructor({ caster, enemy, onComplete, items, replacements, onWinner }) {
     this.caster = caster;
     this.enemy = enemy;
     this.replacements = replacements;
     this.onComplete = onComplete;
+    this.onWinner = onWinner;
 
     let quantityMap = {};
     items.forEach((item) => {
@@ -53,10 +54,10 @@ class SubmissionMenu {
         },
         {
           label: "Escape",
-          description: "Try to run away",
+          description: "You can't escape. Don't  bother trying.",
           handler: () => {
             // do something when chosen
-            console.log("YOU CAN'T RUN AWAY");
+            // this.onWinner("escape");
           },
         },
       ],

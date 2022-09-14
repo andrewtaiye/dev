@@ -85,6 +85,7 @@ class BattleEvent {
           );
         }
       ),
+      onWinner: this.battle.turnCycle.onWinner,
       onComplete: (submission) => {
         resolve(submission);
       },
