@@ -39,6 +39,7 @@ class Person extends GameObject {
           playerStats.speedMaxXp = playerStats.speed * 1600;
         }
       }
+
       this.updatePosition();
     } else {
       // More cases for starting to walk
