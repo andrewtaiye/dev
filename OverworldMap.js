@@ -243,7 +243,6 @@ window.OverworldMaps = {
           { type: "walk", direction: "up" },
           { type: "stand", direction: "left", time: 800 },
           { type: "walk", direction: "left" },
-          { type: "stand", direction: "down", time: 800 },
         ],
         talking: [
           {
