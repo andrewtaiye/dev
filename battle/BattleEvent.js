@@ -136,6 +136,7 @@ class BattleEvent {
           combatant.xp = 0;
           combatant.level += 1;
           combatant.maxXp = 100 * combatant.level;
+          combatant.maxHp += combatant.level * 0.8;
         }
 
         combatant.update();
