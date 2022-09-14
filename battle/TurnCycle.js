@@ -3,7 +3,19 @@ class TurnCycle {
     this.battle = battle;
     this.onNewEvent = onNewEvent;
     this.onWinner = onWinner;
-    this.currentTeam = "player"; // or enemy
+    this.currentTeam = ""; // or enemy
+
+    // get the current team (speed check)
+    const playerSpeed =
+      this.battle.combatants[this.battle.activeCombatants["player"]].stats
+        .speed;
+    const enemySpeed =
+      this.battle.combatants[this.battle.activeCombatants["enemy"]].stats.speed;
+    if (playerSpeed >= enemySpeed) {
+      this.currentTeam = "player";
+    } else {
+      this.currentTeam = "enemy";
+    }
   }
 
   async turn() {
@@ -22,7 +34,7 @@ class TurnCycle {
       enemy,
     });
 
-    // Stop here is replacing main fighter
+    // Stop here if replacing main fighter
     if (submission.replacement) {
       await this.onNewEvent({
         type: "replace",

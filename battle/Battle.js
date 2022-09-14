@@ -37,8 +37,14 @@ class Battle {
 
   addCombatant(id, team, config) {
     const newConfig = JSON.parse(JSON.stringify(config));
-
     if (team === "enemy" && newConfig.generateStats) {
+      // Generate Level
+      newConfig.level = utility.randomFromInterval(
+        Math.max(1, this.combatants.player.level - newConfig.levelSpread.lower),
+        this.combatants.player.level + newConfig.levelSpread.upper
+      );
+
+      // Generate Atk, Def and Spd
       newConfig.stats.attack = utility.randomFromInterval(
         newConfig.level * 0.8,
         newConfig.level * 1.2
@@ -51,6 +57,7 @@ class Battle {
         newConfig.level * 0.8,
         newConfig.level * 1.2
       );
+      console.log(newConfig);
     }
 
     this.combatants[id] = new Combatant(
