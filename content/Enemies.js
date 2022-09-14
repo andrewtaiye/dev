@@ -29,7 +29,7 @@ window.Enemies = {
           lower: 2,
           upper: 2,
         },
-        maxHp: 10,
+        maxHp: 20,
         level: null,
         stats: {
           attack: null,
@@ -49,7 +49,7 @@ window.Enemies = {
           lower: 2,
           upper: 2,
         },
-        maxHp: 10,
+        maxHp: 20,
         level: null,
         stats: {
           attack: null,
@@ -69,7 +69,7 @@ window.Enemies = {
           lower: 2,
           upper: 2,
         },
-        maxHp: 10,
+        maxHp: 20,
         level: null,
         stats: {
           attack: null,
@@ -89,7 +89,7 @@ window.Enemies = {
           lower: 2,
           upper: 2,
         },
-        maxHp: 10,
+        maxHp: 20,
         level: null,
         stats: {
           attack: null,
@@ -109,7 +109,7 @@ window.Enemies = {
           lower: 2,
           upper: 2,
         },
-        maxHp: 10,
+        maxHp: 20,
         level: null,
         stats: {
           attack: null,
