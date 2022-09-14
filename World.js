@@ -38,9 +38,11 @@ class World {
       // Draw Upper map
       this.map.drawUpperImage(this.ctx, cameraPerson);
 
-      requestAnimationFrame(() => {
-        step();
-      });
+      setTimeout(() => {
+        requestAnimationFrame(() => {
+          step();
+        });
+      }, 16);
     };
     step();
   }
