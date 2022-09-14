@@ -57,7 +57,6 @@ class Battle {
         newConfig.level * 0.8,
         newConfig.level * 1.2
       );
-      console.log(newConfig);
     }
 
     this.combatants[id] = new Combatant(
