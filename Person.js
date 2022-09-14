@@ -30,6 +30,15 @@ class Person extends GameObject {
     }
 
     if (this.movementProgressRemaining > 0) {
+      if (this.isPlayerControlled) {
+        const playerStats = window.playerState.fighters.player.stats;
+        playerStats.speedXp += 1;
+        if (playerStats.speedXp === playerStats.speedMaxXp) {
+          playerStats.speed += 1;
+          playerStats.speedXp = 0;
+          playerStats.speedMaxXp = playerStats.speed * 1600;
+        }
+      }
       this.updatePosition();
     } else {
       // More cases for starting to walk

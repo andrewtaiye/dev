@@ -19,7 +19,7 @@ class PlayerState {
           defenceMaxXp: 100,
           speed: 1,
           speedXp: 0,
-          speedMaxXp: 100,
+          speedMaxXp: 1600,
         },
       },
     };
