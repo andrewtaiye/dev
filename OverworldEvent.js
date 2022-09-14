@@ -89,6 +89,14 @@ class OverworldEvent {
     battle.init(document.querySelector(".game-container"));
   }
 
+  heal(resolve) {
+    const playerState = window.playerState;
+    playerState.fighters.player.hp = playerState.fighters.player.maxHp;
+    playerState.fighters.player.status = null;
+
+    return resolve();
+  }
+
   init() {
     return new Promise((resolve) => {
       this[this.event.type](resolve);

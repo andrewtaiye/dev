@@ -151,12 +151,19 @@ window.OverworldMaps = {
             events: [
               {
                 type: "textMessage",
-                text: "Who the hell are you?",
+                text: "You look like you've been through hell.",
                 faceHero: "npc1",
               },
               {
                 type: "textMessage",
-                text: "Which hole did you crawl out from?",
+                text: "Here, eat this grain of rice.",
+              },
+              {
+                type: "heal",
+              },
+              {
+                type: "textMessage",
+                text: "Good as new!",
               },
             ],
             // eventCompleted: false,
