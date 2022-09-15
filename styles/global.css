@@ -18,6 +18,7 @@ body {
   margin: 0;
   overflow: hidden;
   height: 100%;
+  font-family: "Ribeye", cursive;
 }
 
 .game-container {

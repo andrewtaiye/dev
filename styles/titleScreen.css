@@ -1,0 +1,66 @@
+.title-screen {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title-screen .title {
+  color: #fff;
+  font-size: 16px;
+}
+
+.title-screen .keyboard-menu {
+  position: relative;
+
+  /* Resets */
+  background: none;
+  border: none;
+  margin: none;
+  padding: none;
+  color: #000;
+
+  /* Actual Styling */
+  background-color: rgb(125, 202, 233);
+  border: 1px solid rgb(87, 159, 188);
+  border-radius: 15px;
+  /* padding: 5px 20px; */
+
+  font-size: 10px;
+}
+
+.title-screen button {
+  /* Resets */
+  background: none;
+  border: none;
+  margin: none;
+  padding: none;
+  color: #000;
+
+  /* Actual Styling */
+  background-color: rgb(125, 202, 233);
+  border: 1px solid rgb(87, 159, 188);
+  border-radius: 15px;
+  padding: 5px 20px !important;
+
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.title-screen button:hover {
+  background-color: rgb(70, 134, 160);
+  color: #fff;
+}
+
+.title-screen .description-box {
+  background: transparent;
+  color: #fff;
+  border: 0;
+  text-align: center;
+}

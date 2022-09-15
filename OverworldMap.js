@@ -2487,23 +2487,35 @@ window.OverworldMaps = {
       },
     },
     cutsceneSpaces: {
-      // Spaces to trigger interactions with NPCs
-      // [utility.asGridCoord(18, 11)]: [
+      // // Spaces to trigger interactions with NPCs
+      // [utility.asGridCoord(12, 19)]: [
       //   {
       //     events: [
-      //       { who: "npc1", type: "walk", direction: "down" },
-      //       { who: "npc1", type: "walk", direction: "down" },
-      //       { who: "npc1", type: "stand", direction: "right" },
-      //       { who: "hero", type: "stand", direction: "left" },
+      //       { type: "textMessage", text: "Where the hell am I..." },
+      //       { type: "textMessage", text: "One moment I'm flipping pizzas..." },
       //       {
       //         type: "textMessage",
-      //         text: "Hey! You can't go out there like that!",
+      //         text: "The next moment I'm in this... Well?",
       //       },
-      //       { who: "npc1", type: "walk", direction: "up" },
-      //       { who: "npc1", type: "walk", direction: "up" },
-      //       { who: "npc1", type: "stand", direction: "down" },
-      //       { who: "hero", type: "walk", direction: "left" },
-      //       { who: "hero", type: "stand", direction: "up" },
+      //       {
+      //         type: "textMessage",
+      //         text: "This water though, makes me feel refreshed!",
+      //       },
+      //       { who: "hero", type: "walk", direction: "down" },
+      //       { who: "npc2", type: "walk", direction: "left" },
+      //       { who: "npc2", type: "walk", direction: "down" },
+      //       { who: "npc2", type: "walk", direction: "down" },
+      //       { who: "npc2", type: "stand", direction: "right", time: 10 },
+      //       { who: "hero", type: "stand", direction: "left", time: 10 },
+      //       { type: "textMessage", text: "Get out of my way!" },
+      //       { who: "hero", type: "walk", direction: "down" },
+      //       { who: "hero", type: "stand", direction: "up", time: 10 },
+      //       { who: "npc2", type: "walk", direction: "right" },
+      //       { who: "npc2", type: "walk", direction: "right" },
+      //       { who: "npc2", type: "walk", direction: "up" },
+      //       { who: "npc2", type: "walk", direction: "up" },
+      //       { who: "npc2", type: "walk", direction: "left" },
+      //       { who: "npc2", type: "stand", direction: "down", time: 10 },
       //     ],
       //   },
       // ],
