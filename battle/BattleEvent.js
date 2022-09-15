@@ -131,8 +131,10 @@ class BattleEvent {
         if (combatant.xp === combatant.maxXp) {
           combatant.xp = 0;
           combatant.level += 1;
-          combatant.maxXp = 100 * combatant.level;
-          combatant.maxHp += combatant.level * 0.8;
+          combatant.maxXp = window.xpTable["level" + combatant.level];
+          combatant.maxHp = window.hpTable["level" + combatant.level];
+          combatant.hp = combatant.maxHp;
+          combatant.status = null;
         }
 
         combatant.update();

@@ -55,7 +55,7 @@ class Battle {
       }
 
       // Generate Max HP
-      newConfig.maxHp += newConfig.level * 5;
+      newConfig.maxHp = window.hpTable["level" + newConfig.level];
 
       // Generate Atk, Def and Spd
       newConfig.stats.attack = utility.randomFromInterval(
@@ -71,6 +71,8 @@ class Battle {
         newConfig.level * 1.2
       );
     }
+
+    console.log(newConfig);
 
     this.combatants[id] = new Combatant(
       {
@@ -123,17 +125,19 @@ class Battle {
           Object.keys(playerState.fighters).forEach((id) => {
             const playerStateFighter = playerState.fighters[id];
             const combatant = this.combatants[id];
+
             if (combatant) {
               playerStateFighter.hp = combatant.hp;
               playerStateFighter.xp = combatant.xp;
               playerStateFighter.maxXp = combatant.maxXp;
+              playerStateFighter.maxHp = combatant.maxHp;
               playerStateFighter.level = combatant.level;
               playerStateFighter.status = combatant.status;
             }
           });
 
           this.map.gameObjects[this.overworldId].isAlive = false;
-          this.map.gameObjects[this.overworldId].respawnTimer = 100;
+          this.map.gameObjects[this.overworldId].respawnTimer = 30000;
         }
 
         if (winner === "enemy") {
@@ -144,6 +148,7 @@ class Battle {
               playerStateFighter.hp = 1;
               playerStateFighter.xp = combatant.xp;
               playerStateFighter.maxXp = combatant.maxXp;
+              playerStateFighter.maxHp = combatant.maxHp;
               playerStateFighter.level = combatant.level;
               playerStateFighter.status = null;
             }
