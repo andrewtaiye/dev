@@ -34,18 +34,18 @@ class TurnCycle {
       enemy,
     });
 
-    // Stop here if replacing main fighter
-    if (submission.replacement) {
-      await this.onNewEvent({
-        type: "replace",
-        replacement: submission.replacement,
-      });
-      await this.onNewEvent({
-        type: "textMessage",
-        text: "Go Get 'Em!",
-      });
-      return;
-    }
+    // // Stop here if replacing main fighter
+    // if (submission.replacement) {
+    //   await this.onNewEvent({
+    //     type: "replace",
+    //     replacement: submission.replacement,
+    //   });
+    //   await this.onNewEvent({
+    //     type: "textMessage",
+    //     text: "Go Get 'Em!",
+    //   });
+    //   return;
+    // }
 
     let resultingEvents;
 

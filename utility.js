@@ -57,9 +57,9 @@ const utility = {
   // prettier-ignore
   damageFormula(damage, casterLevel, targetLevel, casterAttack, targetDefence) {
     return Math.max(
-      0,
+      1,
       Math.ceil(
-        (damage * Math.max( 0, 100 + (casterLevel - targetLevel) * 10 + (casterAttack * 50) ** (1 + casterAttack / 1000) )) / 100 - targetDefence * 3
+        (damage * Math.max( 0, 100 + (casterLevel - targetLevel) * 10 + (casterAttack * 50) ** (1 + casterAttack / 1000) )) / 100 - Math.floor(targetDefence ** 1.15)
       )
     );
   },

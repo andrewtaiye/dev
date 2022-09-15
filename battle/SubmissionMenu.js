@@ -57,7 +57,7 @@ class SubmissionMenu {
           description: "You can't escape. Don't  bother trying.",
           handler: () => {
             // do something when chosen
-            // this.onWinner("escape");
+            this.onWinner("escape");
           },
         },
       ],

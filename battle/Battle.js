@@ -133,6 +133,7 @@ class Battle {
               playerStateFighter.maxHp = combatant.maxHp;
               playerStateFighter.level = combatant.level;
               playerStateFighter.status = combatant.status;
+              playerStateFighter.stats = combatant.stats;
             }
           });
 

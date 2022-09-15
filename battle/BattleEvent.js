@@ -38,24 +38,44 @@ class BattleEvent {
           ),
       });
 
+      // prettier-ignore
+      console.log({damage: utility.damageFormula(damage, caster.level, target.level, caster.stats.attack, target.stats.defence)})
+
       // increases atk exp if caster is player controlled
       if (caster.isPlayerControlled) {
         caster.stats.attackXp += 1;
         if (caster.stats.attackXp === caster.stats.attackMaxXp) {
           caster.stats.attack += 1;
           caster.stats.attackXp = 0;
-          caster.stats.attackMaxXp = caster.stats.attack * 100;
+          caster.stats.attackMaxXp =
+            window.StatXpTable["level" + caster.stats.attack];
         }
+        caster.update({
+          attack: caster.stats.attack,
+          attackXp: caster.stats.attackXp,
+          attackMaxXp: caster.stats.attackMaxXp,
+        });
       }
 
+      console.log({
+        atkXp: caster.stats.attackXp,
+        atk: caster.stats.attack,
+        thisEvent: this.event,
+      });
       // increases def exp if target is player controlled
       if (target.isPlayerControlled) {
         target.stats.defenceXp += 1;
         if (target.stats.defenceXp === target.stats.defenceMaxXp) {
           target.stats.defence += 1;
           target.stats.defenceXp = 0;
-          target.stats.defenceMaxXp = target.stats.defence * 100;
+          target.stats.defenceMaxXp =
+            window.StatXpTable["level" + target.stats.defence];
         }
+        target.update({
+          defence: target.stats.defence,
+          defenceXp: target.stats.defenceXp,
+          defenceMaxXp: target.stats.defenceMaxXp,
+        });
       }
       // start blinking
       target.spriteElement.classList.add("battle-damage-blink");
@@ -122,6 +142,7 @@ class BattleEvent {
 
   giveXp(resolve) {
     let amount = this.event.xp;
+    console.log(this.event);
     const { combatant } = this.event;
     const step = () => {
       if (amount > 0) {
