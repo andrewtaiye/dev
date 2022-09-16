@@ -14,9 +14,9 @@ The live version of the game is accessible from [this link](https://andrewtaiye.
 
 Displayed below is a list of features implemented in the project.
 
-1. Map Drawing
+1. **Map Drawing**
 
-   Map drawing is managed by the HTML `<canvas>` element. Content is set to `2d` for the rendering of the map. As the map is based on the pixel art form, a 16 x 16 tileset is used. The tileset is put together in photoshop first, then included as an asset for canvas to render.
+   Map drawing is managed by the HTML `<canvas>` element. Context is set to `2d` for the rendering of the map. As the map is based on the pixel art form, a 16 x 16 tileset is used. The tileset is put together in photoshop first, then included as an asset for canvas to render.
 
    A gameloop is used to continuously update and re-render the map with every frame. Each loop starts by clearing the entire canvas. All game objects are then updated and the lower map, game objects and upper map are then rendered in sequence. This sequence allows for elements of the map to overlap with the game objects (e.g. in the event where a character is moving behind some trees or behind buildings).
 
