@@ -72,7 +72,7 @@ class Battle {
       );
     }
 
-    console.log(newConfig);
+    // console.log(newConfig);
 
     this.combatants[id] = new Combatant(
       {
