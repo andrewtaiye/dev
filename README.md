@@ -18,7 +18,7 @@ Displayed below is a list of features implemented in the project.
 
    Map drawing is managed by the HTML `<canvas>` element. Context is set to `2d` for the rendering of the map. As the map is based on the pixel art form, a 16 x 16 tileset is used. The tileset is put together in photoshop first, then included as an asset for canvas to render.
 
-   A game loop is used to continuously update and re-render the map with every frame. This game loop resides within the `World` class. Each loop starts by clearing the entire canvas. All game objects are then updated and the lower map, game objects and upper map are then rendered in sequence. This sequence allows for elements of the map to overlap with the game objects (e.g. in the event where a character is moving behind some trees or behind buildings).
+   A game loop is used to continuously update and re-render the map with every frame. This game loop resides within the `World` class. Each loop starts by clearing the entire canvas and is set to repeat every 16 milliseconds. All game objects are then updated and the lower map, game objects and upper map are then rendered in sequence. This sequence allows for elements of the map to overlap with the game objects (e.g. in the event where a character is moving behind some trees or behind buildings).
 
    Map data is stored within the `window.OverworldMaps` element and resides within the `OverworldMap` class. The data in the overworld maps object contains configuration information such as the image sources for the lower and upper maps, configuration for game objects, tiles with cutscenes, and a list of walls for collision detection.
 
@@ -31,6 +31,14 @@ Displayed below is a list of features implemented in the project.
    Each game object contains a corresponding `Sprite` class which is used to render the object on the canvas. The sprite class takes in the image source, checks if the object uses a shadow, and renders the objects accordingly. As game objects utilise a 32 x 32 spritesheet, the full `drawImage` constructor is used to determine which frame to draw. Sprites are also offset upwards and to the left to allow proper use of character coordinates within the 16 x 16 tileset (i.e. the 32 x 32 frame would normally take up 4 tiles, but the character is offset to be rendered in the correct 16 x 16 tile). Another modifier is utilised to create the 'centered camera' effect while navigating the map.
 
    - **Object Animations**
+
+     Object animationed are managed by the `Sprite` class. A list of animations is stored in the `animations` property as an array of arrays - an array of animations, each with an array of coordinates pointing to the specific frames.
+
+     Note that as the 'people' sprites only contain walking animations and not idle animations, the idle animations for 'people' and 'monsters' have been split up. Ideally, both categories of objects should have walking and idle animations and will be able to utilise the same animation code block.
+
+     Properties are set up for the class to include the current animation (`currentAnimation`), the current animation frame (`currentAnimationFrame`), an animation frame limit (`animationFrameLimit`) and the animation frame progress (`animationFrameProgress`). The animation frame limit determines how many times a frame will be displayed before moving on to the next frame. A lower frame limit will make the objects animate faster.
+
+     At the start of each animation, the animation frame progress is set to the animation frame limit and ticks down with every game loop. If the animation frame progress is greater than 0, the animation will not move on to the next frame. If the animation frame progress is 0, the animation will move on to the next frame by increasing the index of the current animation frame. If the index for the next frame increases beyond the animation array's length, it is set to 0 and the animation loop restarts. This allows for objects with different animation lengths, but those animations will need to be specified separately from the rest of the animations within the `animations` array.
 
 3. **Map Navigation**
    - **Collision Detection**
