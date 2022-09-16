@@ -10,6 +10,8 @@ This project is based on Javascript and uses a Class-based approach to the writi
 
 The live version of the game is accessible from [this link](https://andrewtaiye.github.io/dev).
 
+Inspiration for this project is drawn from Drew Conley's tutorial series [Pizza Legends](https://gamedevshift.com/pizza-legends).
+
 ## List of Features
 
 Displayed below is a list of features implemented in the project.
